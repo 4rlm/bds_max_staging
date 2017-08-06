@@ -1,0 +1,45 @@
+<table class="table table-bordered no-wrap">
+
+  <tr>
+    <!-- type -->
+    <td class="geo w-xsm fa-blue"><%= fa_icon "tags lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Account Type" %></td>
+    <!-- type -->
+    <td><%= core.sfdc_type %></td>
+    
+    <!-- sales_person -->
+    <td class="geo w-xsm fa-blue"><%= fa_icon "user-circle lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Salesperson" %></td>
+    <!-- sales_person -->
+    <td><%= core.sfdc_sales_person %></td>
+
+
+    <!-- Group Icon - Cube-->
+    <td class="geo w-xsm fa-blue"><%= fa_icon "cubes lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Group Name" %></td>
+
+    <!-- Group Name w/ LINK-->
+    <% if core.sfdc_group %>
+    <td>
+      <%= link_to core.sfdc_acct_url, :target => "_blank", class: 'tooltips', title: "Group ID / Link: #{core.sfdc_group_id}", data: { toggle: 'tooltip', placement: 'top'} do %>
+      <%= core.sfdc_group %>
+      <% end %>
+    </td>
+    <% else %>
+    <td>No Group Account</td>
+    <% end %>
+
+
+    <!-- Ultimate Group Icon - Cube-->
+    <td class="geo w-xsm fa-blue"><%= fa_icon "cube lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Ultimate Group Account" %></td>
+
+    <!-- Ultimate Group Name w/ LINK-->
+    <% if core.sfdc_ult_grp %>
+    <td>
+      <%= link_to core.sfdc_acct_url, :target => "_blank", class: 'tooltips', title: "Ultimate Group ID / Link: #{core.sfdc_ult_grp_id}", data: { toggle: 'tooltip', placement: 'top'} do %>
+      <%= core.sfdc_ult_grp %>
+      <% end %>
+    </td>
+    <% else %>
+    <td>No Ultimate Group</td>
+    <% end %>
+
+  </tr>
+</table>

@@ -1,0 +1,47 @@
+<div id="admin-starter" class="scr-prof-net scr-prof">
+  <table class="table table-bordered no-wrap">
+    <tr><th colspan="2">Formatter</th></tr>
+    <tr>
+      <td>Description</td>
+      <td>
+        <%= link_to crm_staff_counter_btn_path, class: 'btn btn-primary btn-xs btn-width' do %>
+        <i class="fa fa-circle-o-notch" aria-hidden="true"></i> CRM Staff Counter
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>Description...</td>
+      <td>
+        <%= link_to phone_formatter_finalizer_btn_path, class: 'btn btn-primary btn-xs btn-width' do %>
+        <i class="fa fa-circle-o-notch" aria-hidden="true"></i> Phone Formatter
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>Migrates account url, acct, phone, pin, addr, street, city, state, zip from geo to indexer IF indexer rts results are Meta or if account name is nil, based on same clean_url.</td>
+      <td>
+        <%= link_to geo_to_indexer_btn_path, class: 'btn btn-primary btn-xs btn-width' do %>
+        <i class="fa fa-circle-o-notch" aria-hidden="true"></i> Geo Migrator
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>Migrates full_addr, street, city, state, zip from geo to indexer IF clean_url and acct pin same.</td>
+      <td>
+        <%= link_to address_formatter_btn_path, class: 'btn btn-primary btn-xs btn-width' do %>
+        <i class="fa fa-circle-o-notch" aria-hidden="true"></i> Address Formatter
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>Migrates geo phone to Indexer if indexer phone is nil, and indexer and geo share same clean_url.</td>
+      <td>
+        <%= link_to phone_migrator_btn_path, class: 'btn btn-primary btn-xs btn-width' do %>
+        <i class="fa fa-circle-o-notch" aria-hidden="true"></i> Phone Migrator
+        <% end %>
+      </td>
+    </tr>
+
+
+  </table>
+</div><br>

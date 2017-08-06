@@ -1,0 +1,47 @@
+<%= form_for(indexer_term) do |f| %>
+<% if indexer_term.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(indexer_term.errors.count, "error") %> prohibited this indexer_term from being saved:</h2>
+
+  <ul>
+    <% indexer_term.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+</div>
+
+<div class="field">
+  <%= f.label :sub_category %>
+  <%= f.text_field :sub_category %>
+</div>
+
+<div class="field">
+  <%= f.label :criteria_term %>
+  <%= f.text_field :criteria_term %>
+</div>
+
+<div class="field">
+  <%= f.label :response_term %>
+  <%= f.text_field :response_term %>
+</div>
+
+<div class="field">
+  <%= f.label :criteria_count %>
+  <%= f.text_field :criteria_count %>
+</div>
+
+<div class="field">
+  <%= f.label :response_count %>
+  <%= f.text_field :response_count %>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>

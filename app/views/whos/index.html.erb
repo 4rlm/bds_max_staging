@@ -1,0 +1,95 @@
+<!-- MODAL PARTIAL -->
+<%= render partial: 'modal' %>
+
+<!-- FILTER PARTIAL -->
+<%= render partial: 'filter' %>
+<br>
+
+<% num = 0 %>
+<% @whos.each do |who| %>
+<% num +=1 %>
+
+<!-- <div id="core-detail" class="text-nowrap geo-result-table"> -->
+
+<!-- <div class="row profile-row"> -->
+<!-- <div class="profile-col col-md-12"> -->
+
+<!-- <table class="table table-bordered indexer-table"> -->
+
+
+<div class="scr-prof">
+  <table class="table table-bordered no-wrap">
+
+    <thead>
+      <tr>
+        <th class="scr-tiny"><%= num %></th>
+        <th>WhoIs Status</th>
+        <th>URL Status</th>
+        <th>URL</th>
+        <!-- <th>URL ID</th> -->
+        <th>IP</th>
+        <th>Server1</th>
+        <th>Server2</th>
+        <th>Registrar URL</th>
+        <!-- <th colspan="2"></th> -->
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td></td>
+        <td class="scr-w-med"><%= who.who_status %></td>
+        <td class="scr-w-med"><%= who.url_status %></td>
+        <td class="scr-w-lg"><%= who.domain %></td>
+        <!-- <td><%#= who.domain_id %></td> -->
+        <td class="scr-w-med"><%= who.ip %></td>
+        <td><%= who.server1 %></td>
+        <td><%= who.server2 %></td>
+        <td><%= who.registrar_url %></td>
+        <!-- <td><%#= link_to 'Edit', edit_who_path(who) %></td> -->
+        <!-- <td><%#= link_to 'Destroy', who, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-bordered no-wrap">
+
+    <tr> <!-- REGISTRANT INFO -->
+      <th>Organization</th>
+      <th>Address Pin</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Zip</th>
+      <th>State</th>
+      <th>Phone</th>
+      <!-- <th>Fax</th> -->
+      <th>Name</th>
+      <th>Email</th>
+      <!-- <th>URL</th> -->
+    </tr>
+
+    <tr>
+      <td><%= who.registrant_organization %></td>
+      <td class="scr-w-med"><%= who.who_addr_pin %></td>
+      <td><%= who.registrant_address %></td>
+      <td><%= who.registrant_city %></td>
+      <td class="scr-w-xsm"><%= who.registrant_zip %></td>
+      <td class="scr-tiny"><%= who.registrant_state %></td>
+      <td class="scr-w-med"><%= who.registrant_phone %></td>
+      <!-- <td class="scr-w-med"><%#= who.registrant_fax %></td> -->
+      <td><%= who.registrant_name %></td>
+      <td><%= who.registrant_email %></td>
+      <!-- <td><%#= who.registrant_url %></td> -->
+    </tr>
+
+  </table>
+</div>
+
+<br>
+
+
+<% end %>
+
+<div class="text-center">
+  <%= will_paginate @whos, renderer: BootstrapPagination::Rails  %>
+</div>

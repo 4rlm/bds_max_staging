@@ -1,0 +1,20 @@
+<!-- FILTER PARTIAL -->
+<%= render partial: 'filter' %>
+
+<!-- ACCOUNTS - LIST VIEW PARTIAL -->
+<% if @view_mode == "list" %>
+<%= render partial: 'buttons', locals: { mode: @view_mode } %>
+<%= render partial: 'list_view' %>
+<% end %>
+
+<!-- ACCOUNTS - DETAILED VIEW PARTIAL -->
+<% if @view_mode == "detail" %>
+<%= render partial: 'buttons', locals: { mode: @view_mode } %>
+<%= render partial: 'detailed_view' %>
+<% end %>
+
+<%= render partial: 'buttons', locals: { mode: @view_mode } %>
+
+<div class="text-center">
+  <%= will_paginate @cores, renderer: BootstrapPagination::Rails %>
+</div>

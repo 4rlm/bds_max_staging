@@ -1,0 +1,1 @@
+json.array! @staffers, partial: 'staffers/staffer', as: :staffer

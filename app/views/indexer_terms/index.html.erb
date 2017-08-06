@@ -1,0 +1,54 @@
+<div class="row text-center pageHeading">
+  <div class="col-md-3">
+    <h1>Scraper Criteria</h1>
+  </div>
+  <div class="col-md-2">
+    <div class="modal-btn">
+      <%= render partial: 'buttons' %>
+    </div>
+  </div>
+</div>
+
+<div id="indexer-term" class="row profile-row scr-prof-net scr-prof">
+  <div class="profile-col col-md-12">
+    <table class="table table-bordered indexer-table no-wrap">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>category</th>
+          <th>sub_category</th>
+          <th>criteria_term</th>
+          <th class="indexer w-xsm">Crit #</th>
+          <th>response_term</th>
+          <th class="indexer w-xsm">Resp #</th>
+          <th>mth_name</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% num = 0 %>
+        <% @indexer_terms.each do |indexer_term| %>
+        <tr>
+          <% num +=1 %>
+          <td><%= num %></td>
+          <td><%= indexer_term.category %></td>
+          <td><%= indexer_term.sub_category %></td>
+          <td><%= indexer_term.criteria_term %></td>
+          <td class="indexer w-xsm"><%= indexer_term.criteria_count %></td>
+          <td><%= indexer_term.response_term %></td>
+          <td class="indexer w-xsm"><%= indexer_term.response_count %></td>
+          <td><%= indexer_term.mth_name %></td>
+          <!-- <td><%#= link_to 'Show', indexer_term %></td> -->
+          <% if admin_only %>
+          <td><%= link_to 'Edit', edit_indexer_term_path(indexer_term) %></td>
+          <td><%= link_to 'Destroy', indexer_term, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%= render partial: 'buttons' %>

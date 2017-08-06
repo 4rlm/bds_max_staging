@@ -1,0 +1,71 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  staffer_status: MyString
+  cont_status: MyString
+  cont_source: MyString
+  sfdc_id: MyString
+  sfdc_sales_person: MyString
+  sfdc_type: MyString
+  sfdc_acct: MyString
+  site_acct: MyString
+  sfdc_group: MyString
+  sfdc_ult_grp: MyString
+  site_street: MyString
+  site_city: MyString
+  site_state: MyString
+  site_zip: 1
+  site_ph: MyString
+  sfdc_cont_fname: MyString
+  sfdc_cont_lname: MyString
+  sfdc_cont_job: MyString
+  sfdc_cont_phone: MyString
+  sfdc_cont_email: MyString
+  sfdc_cont_inactive: MyString
+  sfdc_cont_id: MyString
+  sfdc_cont_influence: 1
+  site_cont_fname: MyString
+  site_cont_lname: MyString
+  site_cont_fullname: MyString
+  site_cont_job: MyString
+  site_cont_job_raw: MyString
+  site_cont_phone: MyString
+  site_cont_email: MyString
+  site_cont_influence: 1
+  template: MyString
+  staffer_date: 2016-12-30 06:44:27
+
+two:
+  staffer_status: MyString
+  cont_status: MyString
+  cont_source: MyString
+  sfdc_id: MyString
+  sfdc_sales_person: MyString
+  sfdc_type: MyString
+  sfdc_acct: MyString
+  site_acct: MyString
+  sfdc_group: MyString
+  sfdc_ult_grp: MyString
+  site_street: MyString
+  site_city: MyString
+  site_state: MyString
+  site_zip: 1
+  site_ph: MyString
+  sfdc_cont_fname: MyString
+  sfdc_cont_lname: MyString
+  sfdc_cont_job: MyString
+  sfdc_cont_phone: MyString
+  sfdc_cont_email: MyString
+  sfdc_cont_inactive: MyString
+  sfdc_cont_id: MyString
+  sfdc_cont_influence: 1
+  site_cont_fname: MyString
+  site_cont_lname: MyString
+  site_cont_fullname: MyString
+  site_cont_job: MyString
+  site_cont_job_raw: MyString
+  site_cont_phone: MyString
+  site_cont_email: MyString
+  site_cont_influence: 1
+  template: MyString
+  staffer_date: 2016-12-30 06:44:27

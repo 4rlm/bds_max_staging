@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  raw_url: MyString
+  redirect_status: MyString
+  clean_url: MyString
+  indexer_status: MyString
+  staff_url: MyString
+  staff_text: MyString
+  location_url: MyString
+  location_text: MyString
+  template: MyString
+  crm_id_arr: 
+  array: MyString
+  true,: MyString
+  default: MyString
+  []: MyString
+
+two:
+  raw_url: MyString
+  redirect_status: MyString
+  clean_url: MyString
+  indexer_status: MyString
+  staff_url: MyString
+  staff_text: MyString
+  location_url: MyString
+  location_text: MyString
+  template: MyString
+  crm_id_arr: 
+  array: MyString
+  true,: MyString
+  default: MyString
+  []: MyString

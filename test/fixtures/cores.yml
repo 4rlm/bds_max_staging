@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bds_status: MyString
+  sfdc_id: MyString
+  sfdc_tier: 1
+  sfdc_sales_person: MyString
+  sfdc_type: MyString
+  sfdc_ult_grp: MyString
+  sfdc_ult_rt: 1
+  sfdc_group: MyString
+  sfdc_grp_rt: 1
+  sfdc_acct: MyString
+  sfdc_street: MyString
+  sfdc_city: MyString
+  sfdc_state: MyString
+  sfdc_zip: 1
+  sfdc_ph: MyString
+  sfdc_url: MyString
+
+two:
+  bds_status: MyString
+  sfdc_id: MyString
+  sfdc_tier: 1
+  sfdc_sales_person: MyString
+  sfdc_type: MyString
+  sfdc_ult_grp: MyString
+  sfdc_ult_rt: 1
+  sfdc_group: MyString
+  sfdc_grp_rt: 1
+  sfdc_acct: MyString
+  sfdc_street: MyString
+  sfdc_city: MyString
+  sfdc_state: MyString
+  sfdc_zip: 1
+  sfdc_ph: MyString
+  sfdc_url: MyString

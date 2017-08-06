@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="pull-left">
+      <% if mode == "detail" && advanced_and_up %>
+      <span class="btn btn-primary btn-xs" onClick="mergeDataCore();"><i class="fa fa-plus fa-green" aria-hidden="true"></i> Merge Data</span>
+      <span class="btn btn-primary btn-xs" onClick="flagDataCore();"><i class="fa fa-flag" aria-hidden="true"></i> Flag Data</span>
+      <span class="btn btn-primary btn-xs" onClick="dropDataCore();"><i class="fa fa-minus fa-red" aria-hidden="true"></i> Drop Data</span>
+      <% end %>
+    </div>
+    <div class="pull-right">
+      <% if advanced_and_up %>
+      <%= link_to 'Download CSV', cores_path(format: "csv"), class: 'btn btn-primary btn btn-primary btn-xs' %>
+      <% end %>
+    </div>
+  </div>
+</div><br>

@@ -1,0 +1,19 @@
+<p>
+  <strong>db_name:</strong>
+  <%= @dashboard.db_name %>
+</p>
+<p>
+  <strong>db_alias:</strong>
+  <%= @dashboard.db_alias %>
+</p>
+<p>
+  <strong>col_name:</strong>
+  <%= @dashboard.col_name %>
+</p>
+<p>
+  <strong>col_alias:</strong>
+  <%= @dashboard.col_alias %>
+</p>
+
+<%= link_to 'Edit', edit_dashboard_path(@dashboard) %> |
+<%= link_to 'Back', dashboards_path %>

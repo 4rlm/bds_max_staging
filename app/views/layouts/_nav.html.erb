@@ -1,0 +1,82 @@
+<!-- ADD THIS LINK TO CDN INSIDE NEW DIV, THEN MOVE "YIELD" INSIDE: -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <ul class="nav navbar-nav">
+
+    <li><%= link_to 'SageDataForce', root_path, class: 'navbar-brand' %></li>
+
+    <% if intermediate_and_up %>
+    <!-- Cores / Accounts -->
+    <li class="dropdown">
+      <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accounts  <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><%= link_to 'Search', core_search_path %></li>
+        <li><%= link_to 'View', cores_path %></li>
+      </ul>
+    </li>
+
+    <!-- Staffers / Contacts -->
+    <li class="dropdown">
+      <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contacts  <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><%= link_to 'Search', staffer_search_path %></li>
+        <li><%= link_to 'View', staffers_path %></li>
+      </ul>
+    </li>
+
+    <!-- Indexers -->
+    <li class="dropdown">
+      <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Scrapers  <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><%= link_to 'Search', indexer_search_path %></li>
+        <li><%= link_to 'View', indexers_path %></li>
+      </ul>
+    </li>
+
+    <!-- WhoIs -->
+    <li class="dropdown">
+      <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">WhoIs <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><%= link_to 'Search', who_search_path %></li>
+        <li><%= link_to 'View', whos_path %></li>
+      </ul>
+    </li>
+
+    <!-- Locations / GeoLocations -->
+    <li class="dropdown">
+      <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">GeoLocation <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><%= link_to 'Search', location_search_path %></li>
+        <li><%= link_to 'View', locations_path %></li>
+      </ul>
+    </li>
+
+    <!-- Dashboards -->
+    <li class="dropdown">
+      <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dashboards <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><%= link_to 'Table View', dashboards_path %></li>
+        <li><%= link_to 'Chart View', summarize_data_path %></li>
+      </ul>
+    </li>
+
+    <% end %>
+
+    <li class="dropdown">
+      <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong><%= current_user.first_name %></strong> <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <% if admin_only %>
+        <!-- <li><%#= link_to 'Google Search', search_path %></li> -->
+        <li><%= link_to 'Admin', admin_index_path %></li>
+        <li><%= link_to 'System Starters', admin_starters_path %></li>
+        <li><%= link_to 'Developer Only', admin_developer_path %></li>
+        <li role="separator" class="divider"></li>
+        <li><%= link_to 'Franchise List', in_host_pos_path %></li>
+        <li><%= link_to 'Scraper Criteria', indexer_terms_path %></li>
+        <li role="separator" class="divider"></li>
+        <% end %>
+        <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+      </ul>
+    </li>
+  </ul>
+</nav>

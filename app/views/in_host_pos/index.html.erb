@@ -1,0 +1,47 @@
+<div class="row text-center pageHeading">
+  <div class="col-md-6">
+    <h1>Franchise List</h1>
+  </div>
+  <div class="col-md-2">
+    <div class="modal-btn">
+      <%= render partial: 'buttons' %>
+    </div>
+  </div>
+</div>
+
+<div class="scr-prof-net scr-prof">
+  <table class="table table-bordered no-wrap">
+
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Terms</th>
+        <th>Brand</th>
+        <th>Br Count</th>
+        <th>Category</th>
+        <th>Cat Count</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% num = 0 %>
+      <% @in_host_pos.each do |in_host_po| %>
+      <% num +=1 %>
+      <tr>
+        <td><%= num %></td>
+        <td><%= in_host_po.term %></td>
+        <td><%= in_host_po.consolidated_term %></td>
+        <td><%= in_host_po.brand_count %></td>
+        <td><%= in_host_po.category %></td>
+        <td><%= in_host_po.cat_count %></td>
+        <td><%= link_to 'Edit', edit_in_host_po_path(in_host_po) %></td>
+        <td><%= link_to 'Destroy', in_host_po, method: :delete %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+<%= render partial: 'buttons' %>

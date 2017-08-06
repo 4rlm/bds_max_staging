@@ -1,0 +1,14 @@
+<div class="jumbotron">
+  <div class="pull-right">
+    <% unless user_signed_in? %>
+    <%= link_to "Sign In", new_user_session_path, class: 'btn btn-lg btn-primary' %>
+    <%= link_to "Register", new_user_registration_path, class: 'btn btn-lg btn-primary'  %>
+    <% end %>
+  </div>
+  <h2>Welcome to Sage Data Force!</h2>
+</div>
+
+<% if current_user && current_user.pending? %>
+<h2>Pending Status</h2>
+<p>You are in <span style="color: red;">pending status</span>. Please wait until you are approved.</p>
+<% end %>

@@ -1,0 +1,12 @@
+<section id="chart">
+  <%= render partial: 'chart', locals: { model_data: @core_data, cols: @core_cols, db_alias: "Accounts", db_name: "Core" } %>
+
+  <%= render partial: 'chart', locals: { model_data: @staffer_data, cols: @staffer_cols, db_alias: "Contacts", db_name: "Staffer" } %>
+
+  <%= render partial: 'chart', locals: { model_data: @indexer_data, cols: @indexer_cols, db_alias: "Indexers", db_name: "Indexer" } %>
+
+  <%= render partial: 'chart', locals: { model_data: @who_data, cols: @who_cols, db_alias: "WhoIs Directory", db_name: "Who" } %>
+
+  <%= render partial: 'chart', locals: { model_data: @location_data, cols: @location_cols, db_alias: "GeoLocation", db_name: "Location" } %>
+
+</section>

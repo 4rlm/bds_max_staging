@@ -1,0 +1,28 @@
+// Place all the styles related to the search controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#search-box {
+  margin-top: 5%;
+}
+
+.table-nonfluid {
+  width: 49% !important;
+}
+
+td {text-align: center;}
+
+
+// google search area - starts
+.google_api {
+  color: blue;
+  display: inline-block;
+  vertical-align: top;
+  margin: auto;
+  width: 33%;
+}
+
+.my-class {
+  width: 33%;
+}
+// google search area - ends

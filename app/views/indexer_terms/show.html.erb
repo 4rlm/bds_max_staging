@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @indexer_term.category %>
+</p>
+
+<p>
+  <strong>Sub category:</strong>
+  <%= @indexer_term.sub_category %>
+</p>
+
+<p>
+  <strong>Criteria term:</strong>
+  <%= @indexer_term.criteria_term %>
+</p>
+
+<p>
+  <strong>Response term:</strong>
+  <%= @indexer_term.response_term %>
+</p>
+
+<p>
+  <strong>Criteria count:</strong>
+  <%= @indexer_term.criteria_count %>
+</p>
+
+<p>
+  <strong>Response count:</strong>
+  <%= @indexer_term.response_count %>
+</p>
+
+<%= link_to 'Edit', edit_indexer_term_path(@indexer_term) %> |
+<%= link_to 'Back', indexer_terms_path %>

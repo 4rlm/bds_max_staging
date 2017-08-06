@@ -1,0 +1,76 @@
+// Place all the styles related to the indexers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.indexer-table {
+  box-shadow: 5px 5px 5px gray;
+  // max-width: 90%;
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.indexer-table tr:hover {
+  background: #ffffb3;
+}
+
+
+.indexer-table th, .indexer-table td {
+  font-size: 85%;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-left: 0;
+  text-align: center;
+  border: solid 1px #137fa0;
+  font-weight: normal;
+  // white-space:nowrap;
+  line-height: normal;
+}
+
+.no-wrap {
+  white-space:nowrap;
+}
+
+.indexer-table th {
+  // background-image:linear-gradient(#32bde7, #1bb5e4);
+  background: #4285F4;
+  color: white;
+}
+
+.indexer.w-xsm {
+  max-width: 30px;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.indexer-table.w-xxsm {
+  max-width: 15px;
+}
+
+.modal-table td{
+  text-align: left;
+}
+
+.modal-table th {
+  background: yellow;
+  color: blue;
+}
+
+.modal-table tr:hover {
+  background: #ffffb3;
+}
+
+.button-div{
+  margin-bottom: 0px;
+}
+
+.inlined {
+  display: inline-block;
+}

@@ -1,0 +1,30 @@
+// Place all the styles related to the dashboards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#chart {
+  .chart-box {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  table {
+    margin: 30px 0;
+  }
+  th {
+    text-align: center;
+    background-color: #eee;
+  }
+}
+
+#dashboard, #indexer-term {
+  th {
+    background-image: linear-gradient(#f2f2f2, #e6e6e6);
+    font-size: 90%;
+    font-weight: normal;
+    color: #333;
+  }
+  td {
+    text-align: left;
+  }
+}

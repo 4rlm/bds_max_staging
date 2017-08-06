@@ -1,0 +1,155 @@
+<h1 class="page-header">Indexer</h1>
+<h4 class="text-center">Links Directory (Main URLs and Redirects, Staff Pages, Location Pages) </h4>
+<br>
+
+
+<!-- FILTER PARTIAL -->
+<%= render partial: 'filter' %>
+<h4>Total Indexer Accounts: <%= number_with_delimiter(@indexer_count) %></h4>
+<h4>Selected Indexer Accounts: <%= number_with_delimiter(@selected_indexers_count) %></h4>
+
+<%= render partial: 'buttons' %>
+<br>
+
+<div class="row profile-row">
+  <div class="profile-col col-md-12">
+    <table class="table table-bordered indexer-table no-wrap">
+      <!-- <table class="table table-bordered indexer-table"> -->
+
+      <thead>
+        <tr>
+          <!-- <th><%#= check_box_tag 'check_all', 'check_all', false, onClick: 'checkAll(this);' %></th> -->
+          <th>#</th>
+          <th>Indexer Status</th>
+
+          <th>100% Match</th>
+          <th>75% Match</th>
+          <th>50% Match</th>
+          <th>25% Match</th>
+
+          <th>Addr Pin IDs</th>
+          <th>Clean URL IDs</th>
+          <th>CRM Acct IDs</th>
+          <th>CRM Ph IDs</th>
+
+          <th>Phones</th>
+          <th>(1. RD) Status</th>
+          <th>(2. WH) WhoIs Status</th>
+          <th>(3. TF) Template</th>
+          <th>(4a. PF) Staff Status</th>
+          <th>(4a. PF) Staff Link</th>
+          <th>(4b. PF) Loc Page</th>
+          <th>(4b. PF) Loc Link</th>
+          <th>(5. RT-MS) Status</th>
+          <th>(6. CS) Status</th>
+          <th>(7. GL) Status</th>
+          <th>(5. RT) Account Name</th>
+          <th>Addr Pin</th>
+          <th>(5. RT) Full Address</th>
+          <th>(5. RT) Street</th>
+          <th>(5. RT) City</th>
+          <th>(5. RT) State</th>
+          <th>(5. RT) Zip</th>
+          <th>(5. RT) Phone</th>
+          <th>(1a. RD) Clean url</th>
+          <th>(1a. RD) Raw url</th>
+          <th>Crm id arr</th>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% num = 0 %>
+        <% @indexers.each do |indexer| %>
+        <tr>
+          <!-- <td><%#= check_box_tag "multi_checks[]",  indexer.id %></td> -->
+
+          <% num +=1 %>
+          <td><%= num %></td>
+          <td><%= indexer.indexer_status %></td>
+
+          <td><%= indexer.score100 %></td>
+          <td><%= indexer.score75 %></td>
+          <td><%= indexer.score50 %></td>
+          <td><%= indexer.score25 %></td>
+
+          <td><%= indexer.acct_pin_crm_ids %></td>
+          <td><%= indexer.clean_url_crm_ids %></td>
+          <td><%= indexer.crm_acct_ids %></td>
+          <td><%= indexer.crm_ph_ids %></td>
+
+          <td><%= indexer.phones %></td>
+
+
+          <!-- URL indexer_indicator -->
+          <td class="<%= indexer_indicator(indexer.raw_url, indexer.clean_url) %>"><%= indexer.redirect_status %></td>
+
+
+          <!-- who_status -->
+          <td class="<%= indexer_indicator(indexer.raw_url, indexer.clean_url) %>"><%= indexer.who_status %></td>
+          <!-- Template -->
+          <td><%= indexer.template %></td>
+          <!-- Staff Status -->
+          <td class="<%= match_sts_ind(indexer.stf_status) %>"><%= indexer.stf_status %></td>
+
+          <!-- Staff Text / URL -->
+          <td class="<%= match_sts_ind(indexer.stf_status) %>">
+            <%= link_to indexer.staff_url, :target => "_blank", class: 'tooltips', title: "#{indexer.staff_url}", data: { toggle: 'tooltip', placement: 'top'} do %>
+            <%= indexer.staff_text %>
+            <% end %>
+          </td>
+
+          <!-- Loc Text / URL -->
+          <td class="<%= match_sts_ind(indexer.loc_status) %>">
+            <%= link_to indexer.location_url, :target => "_blank", class: 'tooltips', title: "#{indexer.location_url}", data: { toggle: 'tooltip', placement: 'top'} do %>
+            <%= indexer.location_text %>
+            <% end %>
+          </td>
+
+          <!-- Loc Status -->
+          <td class="<%= match_sts_ind(indexer.loc_status) %>"><%= indexer.loc_status %></td>
+          <!-- RT Status -->
+          <td><%= indexer.rt_sts %></td>
+
+          <td><%= indexer.contact_status %></td>
+          <td><%= indexer.geo_status %></td>
+          <td><%= indexer.acct_name %></td>
+          <td><%= indexer.acct_pin %></td>
+          <td><%= indexer.full_addr %></td>
+          <td><%= indexer.street %></td>
+          <td><%= indexer.city %></td>
+          <td><%= indexer.state %></td>
+          <td><%= indexer.zip %></td>
+          <td><%= indexer.phone %></td>
+
+          <!-- Clean URL -->
+          <td class="<%= indexer_indicator(indexer.raw_url, indexer.clean_url) %>">
+            <%= link_to indexer.clean_url, :target => "_blank" do %>
+            <%= indexer.clean_url %>
+            <% end %>
+          </td>
+          <!-- Raw URL -->
+          <td class="<%= indexer_indicator(indexer.raw_url, indexer.clean_url) %>">
+            <%= link_to indexer.raw_url, :target => "_blank" do %>
+            <%= indexer.raw_url %>
+            <% end %>
+          </td>
+          <td><%= indexer.crm_id_arr %></td>
+
+
+          <!-- <td><%#= link_to 'Show', indexer %></td> -->
+          <% if advanced_and_up %>
+          <td><%= link_to 'Edit', edit_indexer_path(indexer) %></td>
+          <% end %>
+          <% if admin_only %>
+          <!-- <td><%#= link_to 'Destroy', indexer, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+          <% end %>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%= render partial: 'buttons' %>
+<%= will_paginate @indexers, renderer: BootstrapPagination::Rails  %>

@@ -1,0 +1,49 @@
+<div id="admin-starter" class="scr-prof-net scr-prof">
+  <table class="table table-bordered no-wrap">
+    <tr><th colspan="2">Finalizers</th></tr>
+    <tr>
+      <td>Description...</td>
+      <td>
+        <%= link_to finalizer_btn_path, class: 'btn btn-xs btn-width btn-green' do %>
+        <i class="fa fa-circle-o-notch" aria-hidden="true"></i> Finalizer
+        <% end %>
+      </td>
+    </tr>
+  </table><br>
+
+  <table class="table table-bordered no-wrap">
+    <tr>
+      <td>1. Description...</td>
+      <td>
+        <%= link_to id_sorter_btn_path, class: 'btn btn-primary btn-xs btn-width' do %>
+        <i class="fa fa-circle-o-notch" aria-hidden="true"></i> Id Sorter
+        <% end %>
+      </td>
+
+    </tr>
+    <tr>
+      <td>2. Description...</td>
+      <td>
+        <%= link_to score_calculator_btn_path, class: 'btn btn-primary btn-xs btn-width' do %>
+        <i class="fa fa-circle-o-notch" aria-hidden="true"></i> Score Calculator
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>3. Description...</td>
+      <td>
+        <%= link_to scraper_migrator_btn_path, class: 'btn btn-primary btn-xs btn-width' do %>
+        <i class="fa fa-circle-o-notch" aria-hidden="true"></i> Scraper Migrator
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>4. Migrates Account Addresses to Contacts Table</td>
+      <td>
+        <%= link_to migrate_address_to_staffers_btn_path, class: 'btn btn-primary btn-xs btn-width' do %>
+        <i class="fa fa-circle-o-notch" aria-hidden="true"></i> Cont. Addr. Migrator
+        <% end %>
+      </td>
+    </tr>
+  </table>
+</div><br>

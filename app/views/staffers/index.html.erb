@@ -1,0 +1,20 @@
+<!-- MODAL PARTIAL -->
+<%= render partial: 'modal' %>
+
+<!-- FILTER PARTIAL -->
+<%= render partial: 'filter' %>
+
+<!-- CONTACTS - LIST VIEW PARTIAL -->
+<% if @view_mode == "list" %>
+<%= render partial: 'list_view', locals: { staffers: @staffers } %>
+<% end %>
+
+<!-- CONTACTS - DETAILED VIEW PARTIAL -->
+<% if @view_mode == "detail" %>
+<%= render partial: 'detailed_view' %>
+<% end %>
+
+
+<div class="text-center">
+  <%= will_paginate @paginate_staffers, renderer: BootstrapPagination::Rails  %>
+</div>

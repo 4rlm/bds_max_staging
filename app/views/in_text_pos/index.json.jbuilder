@@ -1,0 +1,1 @@
+json.array! @in_text_pos, partial: 'in_text_pos/in_text_po', as: :in_text_po

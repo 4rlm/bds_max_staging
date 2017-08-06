@@ -1,0 +1,34 @@
+<!-- TOP ROW -->
+<thead>
+  <tr>
+    <th class="geo"><%= num %></th>
+    <th>SRC</th>
+    <th>Address Pin</th>
+    <th>Type</th>
+
+    <!-- CRM URL -->
+    <th colspan="2">GEO</th>
+    <th colspan="3">CRM</th>
+    
+    <!-- geo name / account name -->
+    <th>GEO Account </th>
+    <th colspan="2">CRM Account</th>
+
+    <!-- FULL ADDRESS -->
+    <th>GEO Address</th>
+    <th colspan="2">CRM Address</th>
+  </tr>
+</thead>
+
+<tbody><!-- 2ND ROW: GEO DATA -->
+  <!-- 3rd+ rows start - partial -->
+  <%= render partial: 'table_row', locals: {location: location, num: num} %>
+
+  <% s_ids = get_other_sfdc_ids(location) %>
+
+  <% s_ids.each do |id| %>
+  <% if loc = Location.find_by(sfdc_id: id) %>
+  <%= render partial: 'table_row', locals: {location: loc, num: ""} %>
+  <% end %>
+  <% end %>
+</tbody>

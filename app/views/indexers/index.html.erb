@@ -1,0 +1,18 @@
+
+<!-- MODAL PARTIAL -->
+<%= render partial: 'modal' %>
+
+<!-- FILTER PARTIAL -->
+<%= render partial: 'filter' %>
+
+
+<% num = 0 %>
+<% @indexers.each do |indexer| %>
+<% num +=1 %>
+<%= render partial: 'indexer_detail', locals: {indexer: indexer, num: num} %>
+<% end %>
+
+
+<div class="text-center">
+  <%= will_paginate @indexers, renderer: BootstrapPagination::Rails  %>
+</div>

@@ -1,0 +1,45 @@
+class RemoveColumnsFromCores3 < ActiveRecord::Migration[5.0]
+  def change
+      remove_column :cores, :matched_url, :string
+      remove_column :cores, :matched_root, :string
+      remove_column :cores, :url_comparison, :string
+      remove_column :cores, :root_comparison, :string
+      remove_column :cores, :acct_indicator, :string
+      remove_column :cores, :site_acct, :string
+      remove_column :cores, :site_street, :string
+      remove_column :cores, :site_city, :string
+      remove_column :cores, :site_state, :string
+      remove_column :cores, :site_zip, :integer
+      remove_column :cores, :site_ph, :string
+      remove_column :cores, :street_indicator, :string
+      remove_column :cores, :city_indicator, :string
+      remove_column :cores, :state_indicator, :string
+      remove_column :cores, :zip_indicator, :string
+      remove_column :cores, :ph_indicator, :string
+      remove_column :cores, :grp_rt_indicator, :string
+      remove_column :cores, :ult_grp_rt_indicator, :string
+      remove_column :cores, :franch_indicator, :string
+      remove_column :cores, :site_franchise, :string
+      remove_column :cores, :site_ult_rt, :string
+      remove_column :cores, :site_grp_rt, :string
+      remove_column :cores, :grp_name_indicator, :string
+      remove_column :cores, :ult_grp_name_indicator, :string
+      remove_column :cores, :tier_indicator, :string
+      remove_column :cores, :site_tier, :string
+      remove_column :cores, :site_franch_cat, :string
+      remove_column :cores, :site_ult_grp, :string
+      remove_column :cores, :site_group, :string
+      remove_column :cores, :site_geo_addy, :string
+      remove_column :cores, :site_lat, :float
+      remove_column :cores, :site_lon, :float
+      remove_column :cores, :site_geo_status, :string
+      remove_column :cores, :site_geo_date, :datetime
+      remove_column :cores, :site_coordinates, :string
+      remove_column :cores, :site_franch_cons, :string
+      remove_column :cores, :coord_indicator, :string
+      remove_column :cores, :franch_cons_ind, :string
+      remove_column :cores, :franch_cat_ind, :string
+      remove_column :cores, :template_ind, :string
+      remove_column :cores, :site_template, :string
+  end
+end

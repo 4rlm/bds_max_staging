@@ -1,0 +1,1 @@
+json.array! @indexer_terms, partial: 'indexer_terms/indexer_term', as: :indexer_term

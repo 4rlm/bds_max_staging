@@ -1,0 +1,54 @@
+<!-- MODAL PARTIAL -->
+<%= render partial: 'modal' %>
+
+<!-- FILTER PARTIAL -->
+<%= render partial: 'filter' %>
+
+<%= render partial: 'buttons' %>
+
+<div class="scr-prof-net scr-prof">
+  <div class="row profile-row">
+    <div class="profile-col col-md-12">
+
+      <table class="table table-bordered no-wrap">
+        <!-- <table class="table table-bordered geo-result-table"> -->
+
+        <!-- <div class="scr-prof"> -->
+        <!-- <table class="table table-bordered no-wrap"> -->
+
+        <% coords = [] %>
+        <% num = 0 %>
+        <% @locations.each do |location| %>
+        <% unless coords.include?(location.coordinates) %>
+        <% coords << location.coordinates %>
+        <% num +=1 %>
+        <%= render partial: 'table_group', locals: { num: num, location: location } %>
+        <% end %>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div><br>
+
+<%= render partial: 'buttons' %>
+<div class="text-center">
+  <%= will_paginate @locations, renderer: BootstrapPagination::Rails  %>
+</div>
+
+
+
+<!-- This modal is for showing dealership's website preview or its address. -->
+<div class="modal fade" id="previewModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="close-button">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

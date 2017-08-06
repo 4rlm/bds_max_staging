@@ -1,0 +1,146 @@
+<%= form_tag "/indexers", method: :get, class: 'form-inline'  do %>
+<div class="new-search-container">
+
+  <div class="row">
+    <div class="col-md-1 new-search-left-col">
+      <table class="table table-bordered table-hover text-nowrap new-search-table">
+        <tr>
+          <th colspan="2">Match Status</th>
+        </tr>
+        <tr>
+          <td>100%</td>
+          <td><%= check_box_tag 'score100_check', "true" %></td>
+          <tr>
+            <td>75%</td>
+            <td><%= check_box_tag 'score75_check', "true" %></td>
+          </tr>
+          <tr>
+            <td>50%</td>
+            <td><%= check_box_tag 'score50_check', "true" %></td>
+          </tr>
+          <tr>
+            <td>25%</td>
+            <td><%= check_box_tag 'score25_check', "true" %></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="col-md-11 new-search-right-col">
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table table-bordered table-hover text-nowrap new-search-table">
+              <tr>
+                <!-- Scraper Status -->
+                <th class="fa-md-gray">
+                  <%= fa_icon "diamond lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Recent Scraper Status" %>
+                </th>
+
+                <!-- Redirect Status -->
+                <th class="fa-md-gray">
+                  <%= fa_icon "location-arrow lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "URL Redirect Status" %>
+                </th>
+
+                <!-- WhoIs Status -->
+                <th class="fa-md-gray">
+                  <%= fa_icon "address-book lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "WhoIs Status" %>
+                </th>
+
+                <!-- Template Status -->
+                <th class="fa-md-gray">
+                  <%= fa_icon "file-text lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Dealer Template Status" %>
+                </th>
+
+                <!-- RT Status -->
+                <th class="fa-md-gray">
+                  <%= fa_icon "building lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "RoofTop Scraper Status" %>
+                </th>
+
+                <!-- PF Staff -->
+                <th class="fa-md-gray">
+                  <%= fa_icon "users lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Dealer Staff Page Status" %>
+                </th>
+
+                <!-- PF Locations -->
+                <th class="fa-md-gray">
+                  <%= fa_icon "sitemap lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Dealer Locations Page Status" %>
+                </th>
+
+                <!-- Contact Status -->
+                <th class="fa-md-gray">
+                  <%= fa_icon "user-plus lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Contact Scraper Status" %>
+                </th>
+                <!-- <th>COP Status</th> -->
+              </tr>
+              <tr>
+                <td><%= select_tag :indexer_status, options_for_select(@indexer_status_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+                <td><%= select_tag :redirect_status, options_for_select(@redirect_status_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+
+                <td><%= select_tag :who_status, options_for_select(@who_status_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+
+                <td><%= select_tag :template, options_for_select(@template_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+
+                <td><%= select_tag :rt_sts, options_for_select(@rt_sts_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+
+                <td><%= select_tag :stf_status, options_for_select(@stf_status_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+                <td><%= select_tag :loc_status, options_for_select(@loc_status_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+
+                <td><%= select_tag :contact_status, options_for_select(@contact_status_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+
+                <!-- CoPilot -->
+                <!-- TEMPORARILY LINKING TO REDIRECT STATUS -->
+                <!-- <td><%#= select_tag :cop_type, options_for_select(@contact_status_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td> -->
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table table-bordered table-hover text-nowrap new-search-table">
+              <tr>
+                <th class="th">Account</th>
+                <th class="th-2">Street</th>
+                <th class="th-2">City</th>
+                <th class="th-2">State</th>
+                <th class="th-2">Zip</th>
+                <th class="th-2">Full Address</th>
+                <th class="th-2">Website</th>
+                <th class="th-2">Phone</th>
+              </tr>
+              <tr>
+                <td><%= render partial: 'layouts/text_field_tag', locals: { col: :acct_name } %></td>
+                <td><%= render partial: 'layouts/text_field_tag', locals: { col: :street } %></td>
+                <td><%= render partial: 'layouts/text_field_tag', locals: { col: :city } %></td>
+                <td><%= select_tag :state, options_for_select(@state_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+                <td><%= render partial: 'layouts/text_field_tag', locals: { col: :zip } %></td>
+                <td><%= render partial: 'layouts/text_field_tag', locals: { col: :full_addr } %></td>
+                <td><%= render partial: 'layouts/text_field_tag', locals: { col: :clean_url } %></td>
+                <td><%= render partial: 'layouts/text_field_tag', locals: { col: :phone } %></td>
+              </tr>
+            </table>
+          </div>
+        </div>  <!-- row ends -->
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 scr-btn-1 text-center">
+      <% if advanced_and_up %>
+      <%= link_to 'Download CSV', indexers_path(format: "csv"), class: 'btn btn-primary btn-xs' %>
+      <% end %>
+    </div>
+
+    <div class="col-md-6">
+      <%= submit_tag "Search Scraper Results", class: 'new-wide-button' %>
+    </div>
+
+    <div class="col-md-3 text-center">
+      <h5 class="inlined">Selected: <%= number_with_delimiter(@selected_indexers_count) %> | <%= number_with_delimiter(@indexer_count) %></h5>
+    </div>
+
+  </div>
+
+  <% end %>

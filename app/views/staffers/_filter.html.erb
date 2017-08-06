@@ -1,0 +1,110 @@
+<%= form_tag "/staffers", method: :get, class: 'form-inline'  do %>
+
+<div class="new-search-container">
+  <div class="row filter-row">
+    <div class="col-md-12 new-search-left-col">
+      <table class="table table-bordered table-hover text-nowrap new-search-table">
+        <tr>
+          <th class="th-2">Staffer Status</th>
+          <th class="th-2">Source</th>
+          <th class="th-2">Type:</th>
+          <th class="th-2">Sales Tier</th>
+          <th class="th-2">Sales Person:</th>
+          <th class="th-2">Account Name</th>
+          <th class="th-2">SFDC Acct ID:</th>
+          <th class="th-2">Acct Pin:</th>
+        </tr>
+        <tr>
+          <!-- staffer status -->
+          <td><%= select_tag :staffer_status, options_for_select(@staffer_status_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+          <!-- source -->
+          <td><%= select_tag :cont_source, options_for_select(@cont_source_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+          <!-- <th class="th-2">Type:</th> -->
+          <td><%= select_tag :sfdc_type, options_for_select(@sfdc_type_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+          <!-- tier -->
+          <td><%= select_tag :sfdc_tier, options_for_select(@sfdc_tier_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+          <!-- <th class="th-2">Sales Person:</th> -->
+          <td><%= select_tag :sfdc_sales_person, options_for_select(@sfdc_sales_person_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+          <!-- acct name -->
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :acct_name } %></td>
+          <!-- <th class="th-2">SFDC ID:</th> -->
+          <td><%= text_field_tag :sfdc_id, params[:sfdc_id], placeholder: "----", class: 'form-control' %></td>
+          <!-- Acct Pin -->
+          <td><%= text_field_tag :acct_pin, params[:acct_pin], placeholder: "----", class: 'form-control' %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered table-hover text-nowrap new-search-table">
+        <tr>
+          <th class="th-2">Street</th>
+          <th class="th-2">City</th>
+          <th class="th-2">State List</th>
+          <th class="th-2">Zip</th>
+          <th class="th-2">Full Address</th>
+          <th class="th-2">Website</th>
+          <th class="th-2">Phone</th>
+        </tr>
+        <tr>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :street } %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :city } %></td>
+          <td><%= select_tag :state, options_for_select(@state_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :zip } %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :full_address } %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :domain } %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :phone } %></td>
+        </tr>
+      </table>
+    </div>
+  </div>  <!-- row ends -->
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered table-hover text-nowrap new-search-table">
+        <tr>
+          <!-- <th class="th-2">Contact Status</th> -->
+          <th class="th-2">Job Title</th>
+          <th class="th-2">Job Description</th>
+          <!-- <th class="th-2">Full Name</th> -->
+          <th class="th-2">First Name</th>
+          <th class="th-2">Last Name</th>
+          <th class="th-2">Email</th>
+          <th class="th-2">SFDC Contact ID</th>
+        </tr>
+        <tr>
+          <!-- <td><%#= select_tag :cont_status, options_for_select(@cont_status_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td> -->
+          <td><%= select_tag :job, options_for_select(@job_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :job_raw } %></td>
+          <!-- <td><%#= render partial: 'layouts/text_field_tag', locals: { col: :fullname } %></td> -->
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :fname } %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :lname } %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :email } %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :sfdc_cont_id } %></td>
+        </tr>
+      </table>
+    </div>
+  </div>  <!-- row ends -->
+
+</div> <!-- staffer-filter-container Ends -->
+
+
+<div class="row">
+  <div class="col-md-3 scr-btn-1 text-center">
+    <% if advanced_and_up %>
+    <%= link_to 'Download CSV', staffers_path(format: "csv"), class: 'btn btn-primary btn-xs' %>
+    <% end %>
+  </div>
+
+  <div class="col-md-6">
+    <%= submit_tag "Filter Contacts", class: 'new-wide-button' %>
+  </div>
+  <div class="col-md-3 text-center">
+    <h5>Total Contacts: <%= number_with_delimiter(@staffer_count) %></h5>
+  </div>
+</div>
+
+
+<% end %>

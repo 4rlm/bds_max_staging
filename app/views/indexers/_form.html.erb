@@ -1,0 +1,67 @@
+<%= form_for(indexer) do |f| %>
+<% if indexer.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(indexer.errors.count, "error") %> prohibited this indexer from being saved:</h2>
+
+  <ul>
+    <% indexer.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= f.label :raw_url %>
+  <%= f.text_field :raw_url %>
+</div>
+
+<div class="field">
+  <%= f.label :redirect_status %>
+  <%= f.text_field :redirect_status %>
+</div>
+
+<div class="field">
+  <%= f.label :clean_url %>
+  <%= f.text_field :clean_url %>
+</div>
+
+<div class="field">
+  <%= f.label :indexer_status %>
+  <%= f.text_field :indexer_status %>
+</div>
+
+<div class="field">
+  <%= f.label :staff_url %>
+  <%= f.text_field :staff_url %>
+</div>
+
+<div class="field">
+  <%= f.label :staff_text %>
+  <%= f.text_field :staff_text %>
+</div>
+
+<div class="field">
+  <%= f.label :location_url %>
+  <%= f.text_field :location_url %>
+</div>
+
+<div class="field">
+  <%= f.label :location_text %>
+  <%= f.text_field :location_text %>
+</div>
+
+<div class="field">
+  <%= f.label :template %>
+  <%= f.text_field :template %>
+</div>
+
+<div class="field">
+  <%= f.label :crm_id_arr %>
+  <%= f.text_field :crm_id_arr %>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>

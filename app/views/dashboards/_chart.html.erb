@@ -1,0 +1,44 @@
+<div class="row chart-box">
+  <div class="col-md-6">
+    <h3 class="text-center"><%= db_alias %></h3>
+    <%= bar_chart model_data, colors: ["#137fa0", "#43c8f1"] %>
+  </div>
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-6">
+        <table class="table table-bordered table-hover">
+          <tr>
+            <th>col_alias</th>
+            <th>col_total</th>
+            <th>item_list_total</th>
+          </tr>
+          <% cols[0...cols.length/2].each do |col| %>
+          <tr>
+            <% datas = grap_data(db_name, col) %>
+            <td><%= datas[:col_alias] %></td>
+            <td><%= datas[:col_total] %></td>
+            <td><%= datas[:item_list_total] %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+      <div class="col-md-6">
+        <table class="table table-bordered table-hover">
+          <tr>
+            <th>col_alias</th>
+            <th>col_total</th>
+            <th>item_list_total</th>
+          </tr>
+          <% cols[cols.length/2..-1].each do |col| %>
+          <tr>
+            <% datas = grap_data(db_name, col) %>
+            <td><%= datas[:col_alias] %></td>
+            <td><%= datas[:col_total] %></td>
+            <td><%= datas[:item_list_total] %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

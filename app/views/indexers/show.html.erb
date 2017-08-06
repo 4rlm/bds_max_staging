@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Raw url:</strong>
+  <%= @indexer.raw_url %>
+</p>
+
+<p>
+  <strong>Redirect status:</strong>
+  <%= @indexer.redirect_status %>
+</p>
+
+<p>
+  <strong>Clean url:</strong>
+  <%= @indexer.clean_url %>
+</p>
+
+<p>
+  <strong>Indexer status:</strong>
+  <%= @indexer.indexer_status %>
+</p>
+
+<p>
+  <strong>Staff url:</strong>
+  <%= @indexer.staff_url %>
+</p>
+
+<p>
+  <strong>Staff text:</strong>
+  <%= @indexer.staff_text %>
+</p>
+
+<p>
+  <strong>Location url:</strong>
+  <%= @indexer.location_url %>
+</p>
+
+<p>
+  <strong>Location text:</strong>
+  <%= @indexer.location_text %>
+</p>
+
+<p>
+  <strong>Template:</strong>
+  <%= @indexer.template %>
+</p>
+
+<p>
+  <strong>Crm id arr:</strong>
+  <%= @indexer.crm_id_arr %>
+</p>
+
+<%= link_to 'Edit', edit_indexer_path(@indexer) %> |
+<%= link_to 'Back', indexers_path %>

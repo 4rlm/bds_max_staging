@@ -1,0 +1,118 @@
+<div id="admin-starter" class="scr-prof-net scr-prof">
+  <table class="table table-bordered no-wrap">
+    <thead>
+      <tr>
+        <th>Module</th>
+        <th>Download CSV</th>
+        <th>Import CSV</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Accounts</td>
+        <td>
+          <%= link_to cores_path(format: "csv"), class: 'btn btn-primary btn-xs' do %>
+          <i class="fa fa-download" aria-hidden="true"></i> Download CSV
+          <% end %>
+        </td>
+        <td>
+          <%= link_to core_import_page_path, class: 'btn btn-primary btn-xs' do %>
+          <i class="fa fa-folder-open" aria-hidden="true"></i> Import CSV
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td>Contacts</td>
+        <td>
+          <%= link_to staffers_path(format: "csv"), class: 'btn btn-primary btn-xs' do %>
+          <i class="fa fa-download" aria-hidden="true"></i> Download CSV
+          <% end %>
+        </td>
+        <td>
+          <%= link_to staffer_import_page_path, class: 'btn btn-primary btn-xs' do %>
+          <i class="fa fa-folder-open" aria-hidden="true"></i> Import CSV
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td>Scraper</td>
+        <td>
+          <%= link_to indexers_path(format: "csv"), class: 'btn btn-primary btn-xs' do %>
+          <i class="fa fa-download" aria-hidden="true"></i> Download CSV
+          <% end %>
+        </td>
+        <td>
+          <%= link_to indexer_import_page_path, class: 'btn btn-primary btn-xs' do %>
+          <i class="fa fa-folder-open" aria-hidden="true"></i> Import CSV
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td>WhoIs</td>
+        <td>
+          <%= link_to whos_path(format: "csv"), class: 'btn btn-primary btn-xs' do %>
+          <i class="fa fa-download" aria-hidden="true"></i> Download CSV
+          <% end %>
+        </td>
+        <td>
+          <%= link_to who_import_page_path, class: 'btn btn-primary btn-xs' do %>
+          <i class="fa fa-folder-open" aria-hidden="true"></i> Import CSV
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td>GeoLocations</td>
+        <td>
+          <%= link_to locations_path(format: "csv"), class: 'btn btn-primary btn-xs' do %>
+          <i class="fa fa-download" aria-hidden="true"></i> Download CSV
+          <% end %>
+        </td>
+        <td>
+          <%= link_to location_import_page_path, class: 'btn btn-primary btn-xs' do %>
+          <i class="fa fa-folder-open" aria-hidden="true"></i> Import CSV
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td>Dashboards</td>
+        <td>
+          <%= link_to dashboards_path(format: "csv"), class: 'btn btn-primary btn-xs' do %>
+          <i class="fa fa-download" aria-hidden="true"></i> Download CSV
+          <% end %>
+        </td>
+        <td>
+          <%= link_to dashboard_import_page_path, class: 'btn btn-primary btn-xs' do %>
+          <i class="fa fa-folder-open" aria-hidden="true"></i> Import CSV
+          <% end %>
+        </td>
+      </tr>
+      <tr><th>Admin</th><th></th><th></th></tr>
+      <tr>
+        <td>Franchises List</td>
+        <td>
+          <%= link_to in_host_pos_path(format: "csv"), class: 'btn btn-primary btn-xs' do %>
+          <i class="fa fa-download" aria-hidden="true"></i> Download CSV
+          <% end %>
+        </td>
+        <td>
+          <%= link_to in_host_po_import_page_path, class: 'btn btn-primary btn-xs' do %>
+          <i class="fa fa-folder-open" aria-hidden="true"></i> Import CSV
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td>Scraper Criteria</td>
+        <td>
+          <%= link_to indexer_terms_path(format: "csv"), class: 'btn btn-primary btn-xs' do %>
+          <i class="fa fa-download" aria-hidden="true"></i> Download CSV
+          <% end %>
+        </td>
+        <td>
+          <%= link_to indexer_term_import_page_path, class: 'btn btn-primary btn-xs' do %>
+          <i class="fa fa-folder-open" aria-hidden="true"></i> Import CSV
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><br>

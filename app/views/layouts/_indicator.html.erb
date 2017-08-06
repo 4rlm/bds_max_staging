@@ -1,0 +1,16 @@
+<% if col == "same" %>
+<td class="indicator">
+  <i class="fa fa-check-square indicator-same" aria-hidden="true"></i>
+  <span class="hidden"><%= col %></span>
+</td>
+<% elsif col == "different" %>
+<td class="indicator">
+  <i class="fa fa-bell indicator-different" aria-hidden="true"></i>
+  <span class="hidden"><%= col %></span>
+</td>
+<% else %>
+<td class="indicator">
+  <i class="fa fa-bell indicator-neutral" aria-hidden="true"></i>
+  <span class="hidden"><%= col %></span>
+</td>
+<% end %>

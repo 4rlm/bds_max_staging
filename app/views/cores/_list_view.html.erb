@@ -1,0 +1,79 @@
+
+<!-- <table class="list-table table table-bordered table-hover text-nowrap table-striped"> -->
+<!-- <table class="table table-bordered indexer-table no-wrap"> -->
+<div class="scr-prof-net scr-prof">
+
+  <table class="table table-bordered no-wrap">
+
+    <thead>
+      <tr>
+        <!-- <th><%#= check_box_tag 'check_all', 'check_all', false, onClick: 'checkAll(this);' %></th> -->
+        <th>#</th>
+        <!-- <th>Core</th> -->
+        <!-- <th>Staff Indexer</th> -->
+        <!-- <th>Location Indexer</th> -->
+        <!-- <th>Staffer</th> -->
+        <!-- <th>SFDC Geo</th> -->
+        <!-- <th>SFDC Coord</th> -->
+        <th>Staff Page</th>
+        <th>Account</th>
+        <th>Ult Group</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Type</th>
+        <th>Salesperson</th>
+        <th>SFDC ID</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% num = 0 %>
+      <% @cores.each do |core| %>
+      <% num +=1 %>
+      <tr>
+        <!-- <td><%#= check_box_tag "status_checks[]",  core.id %></td> -->
+        <td><%= num %></td>
+        <!-- <td><%#= core.bds_status %></td> -->
+        <!-- <td><%#= core.staff_pf_sts %></td> -->
+        <!-- <td><%#= core.loc_pf_sts %></td> -->
+        <!-- <td><%#= core.staffer_sts %></td> -->
+        <!-- <td><%#= core.geo_sts %></td> -->
+        <!-- <td><%#= core.coordinates %></td> -->
+        <% if core.staff_text && core.staff_text != "(none)"%>
+        <td class="yes"><%= link_to core.staff_text, core.staff_link, :target => "_blank" %></td>
+        <% else %>
+        <td><%= core.staff_text %></td>
+        <% end %>
+        <td><%= core.sfdc_acct %></td>
+        <td><%= core.sfdc_ult_grp %></td>
+        <td><%= core.sfdc_city %></td>
+        <td><%= core.sfdc_state %></td>
+        <td><%= core.sfdc_type %></td>
+        <td><%= core.sfdc_sales_person %></td>
+        <td><%= core.sfdc_id %></td>
+        <td class='details-btn' >
+          <%= link_to staffer_acct_contacts_path(core: core), :target => "_blank" do %>
+          <span class="glyphicon glyphicon-folder-open"></span>
+          <% end %>
+        </td>
+        <% if advanced_and_up %>
+        <td class='edit-btn' >
+          <%= link_to edit_core_path(core) do %>
+          <span class="glyphicon glyphicon-pencil"></span>
+          <% end %>
+        </td>
+        <% end %>
+        <% if admin_only %>
+        <td class='delete-btn' >
+          <%= link_to core, method: :delete do %>
+          <span class="glyphicon glyphicon-trash"></span>
+          <% end %>
+        </td>
+        <% end %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

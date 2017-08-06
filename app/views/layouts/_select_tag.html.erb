@@ -1,0 +1,1 @@
+<%= select_tag col, options_for_select(ordered_list(@selected_data.select(col).map(&col)), params[col]), multiple: true, class: 'selectpicker', title: "[]" %>

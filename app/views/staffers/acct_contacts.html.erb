@@ -1,0 +1,11 @@
+<% if @core %>
+<h2 class="text-center">Contacts of <%= @core.sfdc_acct %></h2><br>
+
+<%= render partial: 'cores/acct_profile', locals: { core: @core, num: 1 } %>
+<br>
+<% else %>
+<div id="core-detail" class="text-nowrap geo-result-table bg-blue">
+  <p class="lead auto-margin">Account Not Merged Yet</p>
+</div><br>
+<% end %>
+<%= render partial: 'list_view', locals: { staffers: @staffers } %>

@@ -1,0 +1,123 @@
+// Place all the styles related to the staffers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//
+// // staffer ACCOUNT-PROFILE STARTS
+// .account-profile-container {
+//     // border: solid 1px #18a3cd;
+//     border: solid 3px #87dedd;
+//     border-radius: 6px;
+// }
+//
+// .account-profile-container .th-1, .account-profile-container .th-2 {
+//     border: solid 1px #137fa0;
+//     color: white;
+// }
+//
+// // .th-1 [darker shades]  -------
+// .account-profile-container .th-1 {
+//     background-image:linear-gradient(#1798c1, #137fa0);
+// }
+//
+// // .th-2 [lighter shades]  -------
+// .account-profile-container .th-2 {
+//     background-image:linear-gradient(#32bde7, #1bb5e4);
+// }
+//
+// // .th-2 gradients from a-c  -------
+// .account-profile-container .th-2a {
+//     background-image:linear-gradient(#48c4ea, #32bde7);
+// }
+//
+// .account-profile-container .th-2b {
+//     background-image:linear-gradient(#32bde7, #1bb5e4);
+// }
+//
+// .account-profile-container .th-2c {
+//     background-image:linear-gradient(#1bb5e4, #18a3cd);
+// }
+// // staffer ACCOUNT-PROFILE ENDS
+//
+//
+// // staffer SEARCH STARTS
+// .staffer-search-container {
+//     border: solid 3px #87dedd;
+//     border-radius: 6px;
+// }
+//
+// .staffer-search-container .th-1, .staffer-search-container .th-2 {
+//     border: solid 1px #137fa0;
+//     color: white;
+// }
+//
+// // .th-1 [darker shades]  -------
+// .staffer-search-container .th-1 {
+//     background-image:linear-gradient(#1798c1, #137fa0);
+// }
+//
+// // .th-2 [lighter shades]  -------
+// .staffer-search-container .th-2 {
+//     background-image:linear-gradient(#32bde7, #1bb5e4);
+// }
+//
+// // .th-2 gradients from a-c  -------
+// .staffer-search-container .th-2a {
+//     background-image:linear-gradient(#48c4ea, #32bde7);
+// }
+//
+// .staffer-search-container .th-2b {
+//     background-image:linear-gradient(#32bde7, #1bb5e4);
+// }
+//
+// .staffer-search-container .th-2c {
+//     background-image:linear-gradient(#1bb5e4, #18a3cd);
+// }
+//
+// // staffer SEARCH ENDS
+//
+//
+// // NEW staffer ACCOUNT FILTER STARTS
+// .account-filter-container {
+//     border: solid 3px #87dedd;
+//     border-radius: 6px;
+// }
+//
+// .account-filter-container .th-1, .account-filter-container .th-2 {
+//     border: solid 1px #268c8a;
+//     color: white;
+// }
+//
+// // .th-1 [darker shades]  -------
+// .account-filter-container .th-1 {
+//     background-image:linear-gradient(#2ca09e, #268c8a);
+// }
+//
+// // .th-2 [lighter shades]  -------
+// .account-filter-container .th-2 {
+//     background-image:linear-gradient(#73d9d7, #31b4b2);
+// }
+//
+// // .th-2 gradients from a-c  -------
+// .account-filter-container .th-2a {
+//     background-image:linear-gradient(#87dedd, #73d9d7);
+// }
+//
+// .account-filter-container .th-2b {
+//     background-image:linear-gradient(#73d9d7, #5fd3d1);
+// }
+//
+// .account-filter-container .th-2c {
+//     background-image:linear-gradient(#5fd3d1, #4bcecb);
+// }
+
+// NEW staffer ACCOUNT FILTER ENDS
+
+.bg-blue {
+  background-color: #4285F4;
+  color: #fff;
+}
+
+.auto-margin {
+  margin: 10px 0;
+}

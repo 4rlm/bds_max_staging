@@ -1,0 +1,130 @@
+<!-- MODAL PARTIAL -->
+<%= render partial: 'modal' %>
+
+<%= form_tag "/cores", method: :get, class: 'form-inline' do %>
+
+
+<div class="new-search-container">
+  
+  <div class="row">
+    <div class="col-md-12 new-search-left-col">
+      <table class="table table-bordered table-hover text-nowrap new-search-table">
+        <tr>
+          <th class="th-2">Account Merge Status</th>
+          <!-- <th class="th-2">Contact Merge Status</th> -->
+          <th class="th-2">Match Score</th>
+          <th class="th-2">Name Match</th>
+          <th class="th-2">Address Match</th>
+          <th class="th-2">URL Match</th>
+          <th class="th-2">Phone Match</th>
+        </tr>
+        <tr>
+          <td><%= select_tag :acct_merge_sts, options_for_select(@acct_merge_sts_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+          <!-- <td><%#= select_tag :staffer_sts, options_for_select(@staffer_sts_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td> -->
+          <td><%= select_tag :match_score, options_for_select(@match_score_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+          <td><%= select_tag :acct_match_sts, options_for_select(@acct_match_sts_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+          <td><%= select_tag :pin_match_sts, options_for_select(@pin_match_sts_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+          <td><%= select_tag :url_match_sts, options_for_select(@url_match_sts_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+          <td><%= select_tag :ph_match_sts, options_for_select(@ph_match_sts_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+        </tr>
+      </table>
+    </div>
+  </div>  <!-- row ends -->
+
+
+  <div class="row">
+    <div class="col-md-12 new-search-left-col">
+      <table class="table table-bordered table-hover text-nowrap new-search-table">
+        <tr>
+          <th class="th-2">SFDC ID:</th>
+          <th class="th-2">Sales Person:</th>
+          <th class="th-2">Type:</th>
+          <th class="th-2">Sales Tier</th>
+          <th class="th-2">Account Name</th>
+          <th class="th-2">Group Name</th>
+          <th class="th-2">Ultimate Group Name</th>
+        </tr>
+        <tr>
+          <td ><%= text_field_tag :sfdc_id, params[:sfdc_id], placeholder: "----", class: 'form-control' %></td>
+          <td><%= select_tag :sfdc_sales_person, options_for_select(@sfdc_sales_person_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+          <td><%= select_tag :sfdc_type, options_for_select(@sfdc_type_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+          <td><%= select_tag :sfdc_tier, options_for_select(@sfdc_tier_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+          <td><%= text_field_tag :sfdc_acct, params[:sfdc_acct], placeholder: "----", class: 'form-control' %></td>
+          <td><%= text_field_tag :sfdc_group, params[:sfdc_group], placeholder: "----", class: 'form-control' %></td>
+          <td><%= text_field_tag :sfdc_ult_grp, params[:sfdc_ult_grp], placeholder: "----", class: 'form-control' %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 new-search-left-col">
+      <table class="table table-bordered table-hover text-nowrap new-search-table">
+
+        <tr>
+          <th class="th-2">Address Pin</th>
+          <th class="th-2">Franchise:</th>
+          <th class="th-2">Store Type:</th>
+          <th class="th-2">Template</th>
+        </tr>
+        <tr>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :crm_acct_pin } %></td>
+          <td><%= select_tag :sfdc_franch_cons, options_for_select(@franch_cons_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+          <td><%= select_tag :sfdc_franch_cat, options_for_select(@franch_cat_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+          <td><%= select_tag :template, options_for_select(@template_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+        </tr>
+      </table>
+    </div>
+  </div>  <!-- row ends -->
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered table-hover text-nowrap new-search-table">
+        <tr>
+          <th class="th-2">Street</th>
+          <th class="th-2">City</th>
+          <th class="th-2">State</th>
+          <th class="th-2">Zip</th>
+          <th class="th-2">Full Address</th>
+          <th class="th-2">Website</th>
+          <th class="th-2">Phone</th>
+          <th class="th-2">Coordinates</th>
+        </tr>
+        <tr>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :sfdc_street } %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :sfdc_city } %></td>
+          <td><%= select_tag :sfdc_state, options_for_select(@state_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :sfdc_zip } %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :full_address } %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :sfdc_url } %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :sfdc_ph } %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :coordinates } %></td>
+        </tr>
+      </table>
+    </div>
+  </div>  <!-- row ends -->
+
+</div> <!-- search-container Ends -->
+
+
+<div class="row">
+  <div class="col-md-3 scr-btn-1 text-center">
+  </div>
+
+  <div class="col-md-6">
+    <%= submit_tag "Search", class: 'new-wide-button' %>
+  </div>
+
+  <div class="col-md-3 text-center">
+    <h5>Total: <%= number_with_delimiter(@cores_count) %></h5>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+<% end %>

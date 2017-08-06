@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sage Data Force</title>
+  <%= csrf_meta_tags %>
+  
+  <!-- ADD THIS LINK TO CDN: -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+  <% if user_signed_in? %>
+  <%= render partial: 'layouts/nav' %>
+  <% end %>
+
+  <div class="container-fluid outer-container">
+    <%= render partial: 'layouts/flash' %>
+    <%= yield %>
+  </div>
+
+  <footer>SageDateForce &copy; 2017- Developed by TheCodeBooth</footer>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js" %>
+
+</body>
+
+</html>

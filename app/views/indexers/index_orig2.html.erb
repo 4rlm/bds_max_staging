@@ -1,0 +1,198 @@
+<h1 class="page-header">Domainer</h1>
+<h4 class="text-center">Detailed Data associated with each dealer URL </h4>
+<br>
+
+
+<!-- FILTER PARTIAL -->
+<%= render partial: 'filter' %>
+<h4>Total Indexer Accounts: <%= number_with_delimiter(@indexer_count) %></h4>
+<h4>Selected Indexer Accounts: <%= number_with_delimiter(@selected_indexers_count) %></h4>
+
+<%= render partial: 'buttons' %>
+<br>
+
+
+<% num = 0 %>
+<% @indexers.each do |indexer| %>
+<% num +=1 %>
+
+<div id="core-detail" class="text-nowrap geo-result-table">
+
+  <div class="row profile-row">
+    <div class="profile-col col-md-12">
+
+      <!-- <table class="table table-bordered indexer-table no-wrap"> -->
+      <table class="table table-bordered indexer-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Indexer Status</th>
+
+            <th>Redirect</th>
+            <th>WhoIs</th>
+            <th>Template</th>
+            <th>PF Staff</th>
+            <th>PF Staff</th>
+
+            <th>PF Location</th>
+            <th>PF Location</th>
+
+            <th>RT-MS</th>
+            <th>CS</th>
+            <th>Geo</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><%= num %></td>
+            <td><%= indexer.indexer_status %></td>
+
+            <!-- URL indexer_indicator -->
+            <td class="<%= indexer_indicator(indexer.raw_url, indexer.clean_url) %>"><%= indexer.redirect_status %></td>
+
+            <!-- who_status -->
+            <td class="<%= indexer_indicator(indexer.raw_url, indexer.clean_url) %>"><%= indexer.who_status %></td>
+
+            <!-- Template -->
+            <td><%= indexer.template %></td>
+
+            <!-- Staff Text / URL -->
+            <td class="<%= match_sts_ind(indexer.stf_status) %>">
+              <%= link_to indexer.staff_url, :target => "_blank", class: 'tooltips', title: "#{indexer.staff_url}", data: { toggle: 'tooltip', placement: 'top'} do %>
+              <%= indexer.staff_text %>
+              <% end %>
+            </td>
+
+            <!-- Staff Status -->
+            <td class="<%= match_sts_ind(indexer.stf_status) %>"><%= indexer.stf_status %></td>
+
+            <!-- Loc Text / URL -->
+            <td class="<%= match_sts_ind(indexer.loc_status) %>">
+              <%= link_to indexer.location_url, :target => "_blank", class: 'tooltips', title: "#{indexer.location_url}", data: { toggle: 'tooltip', placement: 'top'} do %>
+              <%= indexer.location_text %>
+              <% end %>
+            </td>
+
+            <!-- Loc Status -->
+            <td class="<%= match_sts_ind(indexer.loc_status) %>"><%= indexer.loc_status %></td>
+
+            <!-- RT Status -->
+            <td><%= indexer.rt_sts %></td>
+            <td><%= indexer.contact_status %></td>
+            <td><%= indexer.geo_status %></td>
+
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="table table-bordered indexer-table">
+        <tr> <!-- REGISTRANT INFO -->
+
+          <td class="geo w-xsm fa-blue">
+            <%= fa_icon "external-link lg", "data-toggle": "tooltip", "data-placement": "top", title: "Clean URL" %>
+          </td>
+
+          <!-- Clean URL -->
+          <td class="<%= indexer_indicator(indexer.raw_url, indexer.clean_url) %>">
+            <%= link_to indexer.clean_url, :target => "_blank" do %>
+            <%= indexer.clean_url %>
+            <% end %>
+          </td>
+
+
+
+          <td class="geo w-xsm fa-blue">
+            <%= fa_icon "external-link lg", "data-toggle": "tooltip", "data-placement": "top", title: "Raw URL" %>
+          </td>
+
+
+
+          <!-- Raw URL -->
+          <td class="<%= indexer_indicator(indexer.raw_url, indexer.clean_url) %>">
+            <%= link_to indexer.raw_url, :target => "_blank" do %>
+            <%= indexer.raw_url %>
+            <% end %>
+          </td>
+
+
+          <td class="geo w-xsm fa-blue">
+            <%= fa_icon "id-card lg", "data-toggle": "tooltip", "data-placement": "top", title: "Clean URL IDs" %>
+          </td>
+
+          <td class="geo w-lg"><%= indexer.clean_url_crm_ids %></td>
+        </tr>
+
+      </table>
+      <table class="table table-bordered indexer-table">
+        <tr>
+          <th class="geo w-sm">Account Name</th>
+          <td><%= indexer.acct_name %></td>
+
+          <td class="geo w-xsm fa-blue">
+            <%= fa_icon "id-card lg", "data-toggle": "tooltip", "data-placement": "top", title: "Account IDs" %>
+          </td>
+
+          <td class="geo w-lg"><%= indexer.crm_acct_ids %></td>
+        </tr>
+      </table>
+
+
+      <table class="table table-bordered indexer-table">
+        <tr> <!-- REGISTRANT INFO -->
+          <th class="geo w-sm">Full Address</th>
+          <td><%= indexer.full_addr %></td>
+          <th class="geo w-sm">Addr Pin</th>
+          <td><%= indexer.acct_pin %></td>
+
+          <td class="geo w-xsm fa-blue">
+            <%= fa_icon "id-card lg", "data-toggle": "tooltip", "data-placement": "top", title: "Pin Address IDs" %>
+          </td>
+
+          <td class="geo w-lg"><%= indexer.acct_pin_crm_ids %></td>
+        </tr>
+      </table>
+
+
+      <table class="table table-bordered indexer-table">
+        <tr>
+          <td class="geo w-xsm fa-blue">
+            <%= fa_icon "phone lg", "data-toggle": "tooltip", "data-placement": "top", title: "Phone" %>
+          </td>
+
+          <td><%= indexer.phone %></td>
+
+          <td class="geo w-xsm fa-blue">
+            <%= fa_icon "id-card lg", "data-toggle": "tooltip", "data-placement": "top", title: "Phone IDs" %>
+          </td>
+
+          <td class="geo w-lg"><%= indexer.crm_ph_ids %></td>
+        </tr>
+      </table>
+
+      <table class="table table-bordered indexer-table">
+        <tr> <!-- REGISTRANT INFO -->
+          <th class="geo w-sm">100% Match</th>
+          <td><%= link_core_staffers(indexer.score100) %></td>
+          <th class="geo w-sm">75% Match</th>
+          <td><%= link_core_staffers(indexer.score75) %></td>
+          <th class="geo w-sm">50% Match</th>
+          <td><%= link_core_staffers(indexer.score50) %></td>
+          <th class="geo w-sm">25% Match</th>
+          <td><%= link_core_staffers(indexer.score25) %></td>
+        </tr>
+
+      </table>
+
+    </div> <!-- /.profile-col col-md-12 -->
+  </div> <!-- /.row profile-row -->
+</div> <!-- /#core-detail -->
+
+<br>
+
+
+<% end %>
+
+
+<%= render partial: 'buttons' %>
+<%= will_paginate @indexers, renderer: BootstrapPagination::Rails  %>

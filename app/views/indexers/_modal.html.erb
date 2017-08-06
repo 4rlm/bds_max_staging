@@ -1,0 +1,172 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-background">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="modal-title text-left">
+          <h1>Scraper Module</h1>
+          <h3>Detailed Data Associated with Dealer URLs</h3>
+          <p>Module is 100% Automated.  Use for verifying additional data not sent to Account Profile.</p>
+          
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-1">
+          <h4>Scraping Process</h4>
+          <table class="table table-bordered indexer-table no-wrap modal-table">
+            <tr>
+              <th>Stage I: Validate</th>
+              <th>Stage II: Index</th>
+              <th>Stage III: Scrape</th>
+              <th>Stage IV: Match</th>
+            </tr>
+            <tr>
+              <td>1. URL Formatter</td>
+              <td>4. Identify Dealer Template</td>
+              <td>7. Scrape Raw Data</td>
+              <td>10. Score & Match Account Profile</td>
+            </tr>
+
+            <tr>
+              <td>2. URL Verifier</td>
+              <td>5. Find Staff Page</td>
+              <td>8. Filter & Clean Data</td>
+              <td>11. Merged, Flagged, or Dropped in Accounts</td>
+            </tr>
+
+            <tr>
+              <td>3. URL Registration Data</td>
+              <td>6. Find Locations Page</td>
+              <td>9. SFDC Data Comparisons</td>
+              <td>12. Migrate to SFDC or Recycles to next best fit.</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="modal-1">
+          <h4>Sub-Modules</h4>
+          <table class="table table-bordered indexer-table no-wrap modal-table">
+            <tr>
+              <th>Sub-Module</th>
+              <th>Description</th>
+              <th>Status</th>
+            </tr>
+
+            <tr>
+              <td>1. Scraping Status</td>
+              <td>Formats and Follows URLs</td>
+              <td>RD Result, RD None, RD Error</td>
+            </tr>
+
+            <tr>
+              <td>2. (RD) Redirector</td>
+              <td>Formats and Follows URLs</td>
+              <td>RD Result, RD None, RD Error</td>
+            </tr>
+
+            <tr>
+              <td>3. (WH) WhoIs</td>
+              <td>Gets IP, Server, Registration Data</td>
+              <td>WH Result, WH None, WH Error</td>
+            </tr>
+
+            <tr>
+              <td>4. (TF) Template Finder</td>
+              <td>Finds Dealer Template</td>
+              <td>TF Result, TF None, TF Error</td>
+            </tr>
+
+            <tr>
+              <td>5. (PF) Staff Page Finder</td>
+              <td>Finds Direct Link to Staff Page</td>
+              <td>PF Result, PF None, PF Error</td>
+            </tr>
+
+            <tr>
+              <td>6. (PF) Location Page Finder</td>
+              <td>Finds Direct Link to Locations Page</td>
+              <td>PF Result, PF None, PF Error</td>
+            </tr>
+
+            <tr>
+              <td>7. (RT) Rooftop Scraper</td>
+              <td>Scrapes Dealer Info from Site (via Template)</td>
+              <td>RT Result, RT None, RT Error</td>
+            </tr>
+
+            <tr>
+              <td>8. (MS) Meta Scraper</td>
+              <td>Scrapes Dealer Info from Site (via Meta Data)</td>
+              <td>MS Result, MS None, MS Error</td>
+            </tr>
+
+            <tr>
+              <td>9. (CS) Contact Scraper</td>
+              <td>Scrapes Staff and Info from Site.</td>
+              <td>CS Result, CS None, CS Error</td>
+            </tr>
+
+            <tr>
+              <td>10. (CS) Google Places Scraper</td>
+              <td>Confirms or Gets Name, Address, URL, Coordinates, Image</td>
+              <td>GL Result, GL None, GL Error</td>
+            </tr>
+
+          </table>
+        </div>
+
+
+
+
+        <div class="modal-footer">
+          <div class="row">
+            <div class="col-md-11 text-left">
+              <h4>Getting Started</h4>
+              <ol>
+                <li>Vist "Accounts" module</li>
+                <li>Search based on territory criteria or default to all.</li>
+                <li>May also include match and merge status, or by results of most recent scraping process.</li>
+                <li>Note Likely Match Score: 100%, 75%, 50%, 25%, which are based on number of matching criteria between scraped URL data and SFDC Account data.</li>
+                <li>Click on URL links, Link to SFDC Account, and back to Scraper to comfirm merge suggestion.</li>
+                <li>Select "Merge", "Flag", or "Drop"</li>
+                <li>Merge Data: Upgrades SFDC Account Data with Scraped Data, combines scraped staff (contacts) with SFDC contacts.</li>
+                <li>Drop Data: Removes URL and Scraped Data from Auto-Match options and send it back to Scraper Results Pool for internal logic to detect and route to other best possible matches.</li>
+                <li>Flag Data: Anything from a bug, to an account requiring additional human verification and research, to an account that looks like many more location sites than previously known, or any other reason you see fit.</li>
+              </ol>
+              <h5>For minor bugs and errors regarding a scraping result on a particular account, please use "Flag Data".  For system level problems, modification requests, or suggestions, please email Brandon James who can record frequency and severity to report to SageDataForce development team for patches or future release enhancements.</h5>
+
+            </div>
+
+            <div class="col-md-1">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="row text-center pageHeading">
+  <div class="">
+    <div class="col-md-3">
+      <div class="">
+        <h1>Scrapers</h1>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="modal-btn">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
+          Learn More about Scraper Module
+        </button>
+      </div>
+    </div>
+    <div class="col-md-8">
+    </div>
+  </div>
+</div>

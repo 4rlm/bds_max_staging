@@ -1,0 +1,5 @@
+class RemoveColumnsFromLocations < ActiveRecord::Migration[5.0]
+  def change
+      remove_column :locations, :location_status, :string
+  end
+end

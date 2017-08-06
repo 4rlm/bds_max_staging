@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="page-header">Franchise Terms in Text</h1>
+<h4 class="text-center">Criteria for Identifying, Filtering & Categorizing Franchises in URL Text</h4>
+
+<div class="pull-right">
+  <% advanced_and_up %>
+  <%= link_to 'Download CSV', in_text_pos_path(format: "csv"), class: 'btn btn-primary' %>
+  <% end %>
+</div>
+<br>
+<br>
+
+<%= form_tag "/in_text_pos", method: :get, class: 'form-inline'  do %>
+
+<table class="list-table table table-bordered table-hover text-nowrap table-striped">
+
+  <thead>
+    <tr>
+      <th><%= check_box_tag 'check_all', 'check_all', false, onClick: 'checkAll(this);' %></th>
+      <th>#</th>
+      <th>Terms</th>
+      <th>Franchise</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% num = 0 %>
+    <% @in_text_pos.each do |in_text_po| %>
+    <tr>
+      <td><%= check_box_tag "multi_checks[]",  in_text_po.id %></td>
+      <% num +=1 %>
+      <td><%= num %></td>
+      <td><%= in_text_po.term %></td>
+      <td><%= in_text_po.consolidated_term %></td>
+      <td><%= in_text_po.category %></td>
+      <td><%= link_to 'Show', in_text_po %></td>
+      <td><%= link_to 'Edit', edit_in_text_po_path(in_text_po) %></td>
+      <td><%= link_to 'Destroy', in_text_po, method: :delete %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="pull-left">
+  <%= submit_tag "Delete Checked", class: 'btn btn-danger' %>
+</div>
+<% end %>
+
+<div class="pull-right">
+  <% if advanced_and_up %>
+  <%= link_to 'Download CSV', in_text_pos_path(format: "csv"), class: 'btn btn-primary' %>
+  <% end %>
+</div>

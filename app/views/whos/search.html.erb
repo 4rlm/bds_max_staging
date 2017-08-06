@@ -1,0 +1,73 @@
+<!-- MODAL PARTIAL -->
+<%= render partial: 'modal' %>
+
+<%= form_tag "/whos", method: :get, class: 'form-inline'  do %>
+
+<div class="new-search-container">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered table-hover text-nowrap new-search-table">
+        
+        <tr>
+          <th class="th-2">WhoIs Status</th>
+          <th class="th-2">URL Status</th>
+          <th class="th-2">IP</th>
+          <th class="th-2">Server1</th>
+          <th class="th-2">Server2</th>
+        </tr>
+        <tr>
+          <td><%= select_tag :who_status, options_for_select(@who_status_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+
+          <td><%= select_tag :url_status, options_for_select(@url_status_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+
+
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :ip } %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :server1 } %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :server2 } %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered table-hover text-nowrap new-search-table">
+
+        <tr> <!-- REGISTRANT INFO -->
+          <!-- <th class="th-2">Name</th> -->
+          <th class="th-2">Account</th>
+          <th class="th-2">Street</th>
+          <th class="th-2">City</th>
+          <th class="th-2">State</th>
+          <th class="th-2">Zip</th>
+          <th class="th-2">Website</th>
+          <th class="th-2">Phone</th>
+          <th class="th-2">Address Pin</th>
+        </tr>
+        <tr>
+          <!-- <td><%#= render partial: 'layouts/text_field_tag', locals: { col: :registrant_name } %></td> -->
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :registrant_organization } %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :registrant_address } %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :registrant_city } %></td>
+          <td><%= select_tag :registrant_state, options_for_select(@state_opts), multiple: true, class: 'selectpicker form-control', title: "[]" %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :registrant_zip } %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :domain } %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :registrant_phone } %></td>
+          <td><%= render partial: 'layouts/text_field_tag', locals: { col: :registrant_pin } %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div> <!-- search-container Ends -->
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= submit_tag "Search WhoIs Results", class: 'new-wide-button' %>
+  </div>
+
+  <div class="col-md-3 text-center">
+    <h5>Total: <%= number_with_delimiter(@who_count) %></h5>
+  </div>
+</div>
+
+<% end %>

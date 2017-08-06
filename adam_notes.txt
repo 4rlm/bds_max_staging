@@ -1,0 +1,74 @@
+
+https://www.fresno.porschedealer.com/
+https://porschefresno.com/
+
+
+====(porschedealer)===/ hostname error
+https://www.harper.porschedealer.com/
+https://harper.porschedealer.com/
+
+https://www.walnutcreek.porschedealer.com/
+https://walnutcreek.porschedealer.com/
+========================
+
+http://www.shreveportnissan.orrnissan.com/
+http://shreveportnissan.orrnissan.com/
+
+https://www.es.sdhondadealers.com/
+https://es.sdhondadealers.com/
+
+
+==============/ Certificate Error
+https://www.nationalautofleetgroup.com/
+http://nationalautofleetgroup.com/
+
+==============/ Host Error
+http://www.gm.fuccillo.com
+http://gm.fuccillo.com
+
+
+http://www.austin.nylemaxwell.com/
+http://austin.nylemaxwell.com/
+
+http://www.kia.jackkey.com/
+http://kia.jackkey.com/
+----------------
+capitolfordkia.com
+
+
+==============/ Transfer Error
+http://www.scionofgreenville.com
+https://www.toyotaofgreenville.com/
+
+
+==============/ Error
+www.lewischevybuick.com
+www.lewischevybuick.com
+
+==============================
+##############################
+==============================
+
+
+rails g scaffold IndexerTerm category:string sub_category:string criteria_term:string response_term:string criteria_count:string response_count:string
+
+
+
+
+
+
+
+
+
+TCP connection,TCP Error
+403 => Net::HTTPForbidden,403 Error
+410 => Net::HTTPGone,410 Error
+500 => Net::HTTPInternalServerError,500 Error
+SSL_connect returned,SSL Error
+404 => Net::HTTPNotFound,404 Error
+400 => Net::HTTPBadRequest,400 Error
+nil:NilClass,Nil Error
+undefined method,Method Error
+503 => Net::HTTPServiceUnavailable,503 Error
+Errno::ECONNRESET,Reset Error
+504 => Net::HTTPGatewayTimeOut,504 Error

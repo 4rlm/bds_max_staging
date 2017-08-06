@@ -1,0 +1,108 @@
+<tr><!-- 3RD ROW: CRM DATA -->
+  <% if advanced_and_up %>
+  <td class="geo w-xxsm" data-id="<%= location.id %>" onClick="changeAllStatus(this);">
+    <%= fa_icon "circle-thin lg", class: "stat-btn fa-clear", "data-toggle": "tooltip", "data-placement": "top", title: "Select Row" %>
+  </td>
+  <% else %>
+  <td></td>
+  <% end %>
+  
+  <!-- <td><%= location.crm_source %></td> -->
+  <% if location.sfdc_acct_url %>
+  <td><%= link_to location.sfdc_acct_url, :target => "_blank" %></td>
+  <% else %>
+  <td><%= location.crm_source %></td>
+  <% end %>
+
+  <td><%= location.geo_acct_pin %></td>
+  <td><%= location.acct_type %></td>
+
+
+  <!-- GEO URL LIGTHBOX MODAL  -->
+  <% if location.url %>
+  <td class="<%= geo_indicator(location.crm_url, location.url) %>">
+    <span class="modalButton" data-toggle="modal" data-target="#previewModal" data-src="<%= add_http(location.url) %>">
+      <%= fa_icon "clone lg" %></span>
+    </td>
+    <% else %>
+    <td class="fa-gray"><%= fa_icon "warning lg", "data-toggle": "tooltip", "data-placement": "top", title: "No URL" %></td>
+    <% end %>
+
+    <!-- GEO URL LINK -->
+    <% if location.url %>
+    <td class="<%= geo_indicator(location.crm_url, location.url) %>">
+      <%= link_to add_http(location.url), :target => "_blank" do %>
+      <%= fa_icon "external-link lg", "data-toggle": "tooltip", "data-placement": "top", title: "(GEO)#{location.url} (CRM)#{location.crm_url}" %>
+      <% end %>
+    </td>
+    <% else %>
+    <td class="fa-gray"><%= fa_icon "warning lg", "data-toggle": "tooltip", "data-placement": "top", title: "No URL" %></td>
+    <% end %>
+
+
+    <!-- CRM URL JS BUTTON-->
+    <% if advanced_and_up %>
+    <td class="<%= geo_indicator(location.crm_url, location.url) %> geo w-xxsm" data-id="<%= location.id %>" data-col="url" onClick="changeStatus(this);">
+      <%= fa_icon "circle-thin lg", class: "stat-btn fa-clear", "data-toggle": "tooltip", "data-placement": "top", title: "Select Cell" %>
+    </td>
+    <% else %>
+    <td></td>
+    <% end %>
+
+
+    <!-- CRM URL LIGTHBOX MODAL  -->
+    <% if location.crm_url %>
+    <td class="<%= geo_indicator(location.crm_url, location.url) %>">
+      <span class="modalButton" data-toggle="modal" data-target="#previewModal" data-src="<%= add_http(location.crm_url) %>">
+        <%= fa_icon "clone lg" %></span>
+      </td>
+      <% else %>
+      <td class="fa-gray"><%= fa_icon "warning lg", "data-toggle": "tooltip", "data-placement": "top", title: "No URL" %></td>
+      <% end %>
+
+      <!-- CRM URL LINK -->
+      <% if location.crm_url %>
+      <td class="<%= geo_indicator(location.crm_url, location.url) %>">
+        <%= link_to add_http(location.crm_url), :target => "_blank" do %>
+        <%= fa_icon "external-link lg", "data-toggle": "tooltip", "data-placement": "top", title: "(CRM)#{location.crm_url} (GEO)#{location.url}" %>
+        <% end %>
+      </td>
+      <% else %>
+      <td class="fa-gray"><%= fa_icon "warning lg", "data-toggle": "tooltip", "data-placement": "top", title: "No URL" %></td>
+      <% end %>
+
+
+      <!-- GEO ACCOUNT NAME w/ MODAL LIGHTBOX-->
+      <td class="<%= geo_indicator(location.acct_name, location.geo_acct_name) %>">
+        <span class="modalButton" data-toggle="modal" data-target="#previewModal" data-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCMINjz6qATKxuxTc6tWNzyVehLybEYouY&zoom=17&q=<%= "#{location.geo_acct_name}" %>"><%= location.geo_acct_name %></span>
+      </td>
+
+
+      <!-- JS ACCT NAME -->
+      <% if advanced_and_up %>
+      <td class="<%= geo_indicator(location.acct_name, location.geo_acct_name) %> geo w-xxsm" data-id="<%= location.id %>" data-col="account" onClick="changeStatus(this);">
+        <%= fa_icon "circle-thin lg", class: "stat-btn fa-clear", "data-toggle": "tooltip", "data-placement": "top", title: "Select Cell" %>
+      </td>
+      <% else %>
+      <td></td>
+      <% end %>
+
+      <!-- CRM ACCOUNT NAME w/ MODAL LIGHTBOX-->
+      <td class="<%= geo_indicator(location.acct_name, location.geo_acct_name) %>">
+        <span class="modalButton" data-toggle="modal" data-target="#previewModal" data-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCMINjz6qATKxuxTc6tWNzyVehLybEYouY&zoom=17&q=<%= "#{location.acct_name}" %>"><%= location.acct_name %></span>
+      </td>
+
+
+      <!-- GEO ADDRESS -->
+      <td class="<%= geo_indicator(location.address, location.geo_full_addr) %>"><span data-toggle="tooltip" data-placement="top" title="<%= location.coordinates %> <%= location.sfdc_id %>"><%= location.geo_full_addr %></span></td>
+
+      <!-- JS ADDRESS -->
+      <% if advanced_and_up %>
+      <td class="<%= geo_indicator(location.address, location.geo_full_addr) %> geo w-xxsm" data-id="<%= location.id %>" data-col="address" onClick="changeStatus(this);"><%= fa_icon "circle-thin lg", class: "stat-btn fa-clear", "data-toggle": "tooltip", "data-placement": "top", title: "Select Cell" %></td>
+      <% else %>
+      <td></td>
+      <% end %>
+
+      <!-- CRM ADDRESS -->
+      <td class="<%= geo_indicator(location.address, location.geo_full_addr) %> address"><%= location.address %></td>
+    </tr>

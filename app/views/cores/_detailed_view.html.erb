@@ -1,0 +1,24 @@
+<!-- theme-layout-table -->
+<!-- profile-container -->
+<!-- ### New Version from Geo Locations  ### -->
+<% num = 0 %>
+<% @cores.each do |core| %>
+<% num +=1 %>
+<%= render partial: 'acct_profile', locals: { core: core, num: num } %>
+<% end %>
+
+<!-- ### MODAL TEMPLATE!! - DO NOT DELETE   ### -->
+<div class="modal fade" id="previewModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="close-button">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

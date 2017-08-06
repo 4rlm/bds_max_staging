@@ -1,0 +1,1 @@
+json.partial! "in_host_pos/in_host_po", in_host_po: @in_host_po

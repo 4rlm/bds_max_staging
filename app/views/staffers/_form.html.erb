@@ -1,0 +1,182 @@
+<%= form_for(staffer) do |f| %>
+<% if staffer.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(staffer.errors.count, "error") %> prohibited this staffer from being saved:</h2>
+
+  <ul>
+    <% staffer.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= f.label :staffer_status %>
+  <%= f.text_field :staffer_status %>
+</div>
+
+<div class="field">
+  <%= f.label :cont_status %>
+  <%= f.text_field :cont_status %>
+</div>
+
+<div class="field">
+  <%= f.label :cont_source %>
+  <%= f.text_field :cont_source %>
+</div>
+
+<div class="field">
+  <%= f.label :sfdc_id %>
+  <%= f.text_field :sfdc_id %>
+</div>
+
+<div class="field">
+  <%= f.label :sfdc_sales_person %>
+  <%= f.text_field :sfdc_sales_person %>
+</div>
+
+<div class="field">
+  <%= f.label :sfdc_type %>
+  <%= f.text_field :sfdc_type %>
+</div>
+
+<div class="field">
+  <%= f.label :sfdc_acct %>
+  <%= f.text_field :sfdc_acct %>
+</div>
+
+<div class="field">
+  <%= f.label :site_acct %>
+  <%= f.text_field :site_acct %>
+</div>
+
+<div class="field">
+  <%= f.label :sfdc_group %>
+  <%= f.text_field :sfdc_group %>
+</div>
+
+<div class="field">
+  <%= f.label :sfdc_ult_grp %>
+  <%= f.text_field :sfdc_ult_grp %>
+</div>
+
+<div class="field">
+  <%= f.label :site_street %>
+  <%= f.text_field :site_street %>
+</div>
+
+<div class="field">
+  <%= f.label :site_city %>
+  <%= f.text_field :site_city %>
+</div>
+
+<div class="field">
+  <%= f.label :site_state %>
+  <%= f.text_field :site_state %>
+</div>
+
+<div class="field">
+  <%= f.label :site_zip %>
+  <%= f.number_field :site_zip %>
+</div>
+
+<div class="field">
+  <%= f.label :site_ph %>
+  <%= f.text_field :site_ph %>
+</div>
+
+<div class="field">
+  <%= f.label :sfdc_cont_fname %>
+  <%= f.text_field :sfdc_cont_fname %>
+</div>
+
+<div class="field">
+  <%= f.label :sfdc_cont_lname %>
+  <%= f.text_field :sfdc_cont_lname %>
+</div>
+
+<div class="field">
+  <%= f.label :sfdc_cont_job %>
+  <%= f.text_field :sfdc_cont_job %>
+</div>
+
+<div class="field">
+  <%= f.label :sfdc_cont_phone %>
+  <%= f.text_field :sfdc_cont_phone %>
+</div>
+
+<div class="field">
+  <%= f.label :sfdc_cont_email %>
+  <%= f.text_field :sfdc_cont_email %>
+</div>
+
+<div class="field">
+  <%= f.label :sfdc_cont_inactive %>
+  <%= f.text_field :sfdc_cont_inactive %>
+</div>
+
+<div class="field">
+  <%= f.label :sfdc_cont_id %>
+  <%= f.text_field :sfdc_cont_id %>
+</div>
+
+<div class="field">
+  <%= f.label :sfdc_cont_influence %>
+  <%= f.number_field :sfdc_cont_influence %>
+</div>
+
+<div class="field">
+  <%= f.label :site_cont_fname %>
+  <%= f.text_field :site_cont_fname %>
+</div>
+
+<div class="field">
+  <%= f.label :site_cont_lname %>
+  <%= f.text_field :site_cont_lname %>
+</div>
+
+<div class="field">
+  <%= f.label :site_cont_fullname %>
+  <%= f.text_field :site_cont_fullname %>
+</div>
+
+<div class="field">
+  <%= f.label :site_cont_job %>
+  <%= f.text_field :site_cont_job %>
+</div>
+
+<div class="field">
+  <%= f.label :site_cont_job_raw %>
+  <%= f.text_field :site_cont_job_raw %>
+</div>
+
+<div class="field">
+  <%= f.label :site_cont_phone %>
+  <%= f.text_field :site_cont_phone %>
+</div>
+
+<div class="field">
+  <%= f.label :site_cont_email %>
+  <%= f.text_field :site_cont_email %>
+</div>
+
+<div class="field">
+  <%= f.label :site_cont_influence %>
+  <%= f.number_field :site_cont_influence %>
+</div>
+
+<div class="field">
+  <%= f.label :template %>
+  <%= f.text_field :template %>
+</div>
+
+<div class="field">
+  <%= f.label :staffer_date %>
+  <%= f.datetime_select :staffer_date %>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>

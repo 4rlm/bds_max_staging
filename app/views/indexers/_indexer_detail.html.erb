@@ -1,0 +1,269 @@
+<!-- <div id="core-detail" class="geo-result-table"> -->
+
+<div class="scr-prof-net scr-prof">
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <table class="table table-bordered no-wrap">
+        <tr>
+          <th class="scr-w-xsm">
+            <span data-toggle="tooltip" data-placement="top" title="Usually 3 stages of scraping process: XX Result, XX None, XX Error">Process</span>
+          </th>
+
+          <!-- Trial Indexer Status -->
+          <% if indexer.indexer_status && indexer.indexer_status.include?("Error") %>
+          <th class="fa-red scr-w-med-min">
+            <%= fa_icon "diamond lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "#{indexer.indexer_status}: #{indexer.updated_at.strftime("%m/%d/%Y")}" %>
+          </th>
+          <% elsif indexer.indexer_status && indexer.indexer_status.include?("None") %>
+          <th class="fa-black scr-w-med-min">
+            <%= fa_icon "diamond lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "#{indexer.indexer_status}: #{indexer.updated_at.strftime("%m/%d/%Y")}" %>
+          </th>
+          <% elsif indexer.indexer_status %>
+          <th class="fa-blue scr-w-med-min">
+            <%= fa_icon "diamond lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "#{indexer.indexer_status}: #{indexer.updated_at.strftime("%m/%d/%Y")}" %>
+          </th>
+          <% else %>
+          <th class="fa-md-gray scr-w-med-min">
+            <%= fa_icon "diamond lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "No Scraper Status" %>
+          </th>
+          <% end %>
+
+
+          <!-- URL indexer_indicator -->
+          <% if indexer.redirect_status && indexer.redirect_status.include?("Error") %>
+          <th class="fa-red scr-w-med-min">
+            <%= fa_icon "location-arrow lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "URL Redirect: #{indexer.redirect_status}" %>
+          </th>
+          <% elsif indexer.redirect_status && indexer.redirect_status.include?("None") %>
+          <th class="fa-black scr-w-med-min">
+            <%= fa_icon "location-arrow lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "URL Redirect: #{indexer.redirect_status}" %>
+          </th>
+          <% elsif indexer.redirect_status %>
+          <th class="fa-blue scr-w-med-min">
+            <%= fa_icon "location-arrow lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "URL Redirect: #{indexer.redirect_status}" %>
+          </th>
+          <% else %>
+          <th class="fa-md-gray scr-w-med-min">
+            <%= fa_icon "location-arrow lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "No URL Redirect Status" %>
+          </th>
+          <% end %>
+
+
+          <!-- WhoIs RT Status -->
+          <% if indexer.who_status && indexer.who_status.include?("Error") %>
+          <th class="fa-red scr-w-med-min">
+            <%= fa_icon "address-book lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "WhoIs: #{indexer.who_status}" %>
+          </th>
+          <% elsif indexer.who_status && indexer.who_status.include?("None") %>
+          <th class="fa-black scr-w-med-min">
+            <%= fa_icon "address-book lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "WhoIs: #{indexer.who_status}" %>
+          </th>
+          <% elsif indexer.who_status %>
+          <th class="fa-blue scr-w-med-min">
+            <%= fa_icon "address-book lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "WhoIs: #{indexer.who_status}" %>
+          </th>
+          <% else %>
+          <th class="fa-md-gray scr-w-med-min">
+            <%= fa_icon "address-book lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "No WhoIs Status" %>
+          </th>
+          <% end %>
+
+          <!-- Template Finder Status -->
+          <% if indexer.template && indexer.template.include?("Error") %>
+          <th class="fa-red scr-w-med-min">
+            <%= fa_icon "file-text lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Dealer Template: #{indexer.template}" %>
+          </th>
+          <% elsif indexer.template && indexer.template.include?("None") %>
+          <th class="fa-black scr-w-med-min">
+            <%= fa_icon "file-text lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Dealer Template: #{indexer.template}" %>
+          </th>
+          <% elsif indexer.template %>
+          <th class="fa-blue scr-w-med-min">
+            <%= fa_icon "file-text lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Dealer Template: #{indexer.template}" %>
+          </th>
+          <% else %>
+          <th class="fa-md-gray scr-w-med-min">
+            <%= fa_icon "file-text lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "No Dealer Template Status" %>
+          </th>
+          <% end %>
+
+          <!-- Trial Staff Text / Link / Status -->
+          <% if indexer.stf_status && indexer.stf_status.include?("Error") %>
+          <th class="fa-red scr-w-med-min">
+            <%= fa_icon "users lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Dealer Staff Page: #{indexer.stf_status}" %>
+          </th>
+          <% elsif indexer.stf_status && indexer.stf_status.include?("None") %>
+          <th class="fa-black scr-w-med-min">
+            <%= fa_icon "users lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Dealer Staff Page: #{indexer.stf_status}" %>
+          </th>
+          <% elsif indexer.staff_text %>
+          <th class="fa-blue scr-w-med-min">
+            <%= link_to indexer.staff_url, :target => "_blank" do %>
+            <%= fa_icon "users lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Dealer Staff Page: #{indexer.staff_text}" %>
+            <% end %>
+          </th>
+          <% else %>
+          <th class="fa-md-gray scr-w-med-min">
+            <%= fa_icon "users lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "No Dealer Staff Page" %>
+          </th>
+          <% end %>
+
+
+          <!-- Trial Location Text / Link / Status -->
+          <% if indexer.loc_status && indexer.loc_status.include?("Error") %>
+          <th class="fa-red scr-w-med-min">
+            <%= fa_icon "sitemap lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Dealer Locations: #{indexer.loc_status}" %>
+          </th>
+          <% elsif indexer.loc_status && indexer.loc_status.include?("None") %>
+          <th class="fa-black scr-w-med-min">
+            <%= fa_icon "sitemap lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Dealer Locations: #{indexer.loc_status}" %>
+          </th>
+          <% elsif indexer.location_text %>
+          <th class="fa-blue scr-w-med-min">
+            <%= link_to indexer.location_url, :target => "_blank" do %>
+            <%= fa_icon "sitemap lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Dealer Locations: #{indexer.location_text}" %>
+            <% end %>
+          </th>
+          <% else %>
+          <th class="fa-md-gray scr-w-med-min">
+            <%= fa_icon "sitemap lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "No Dealer Locations Page" %>
+          </th>
+          <% end %>
+
+
+          <!-- Trial RT Status -->
+          <% if indexer.rt_sts && indexer.rt_sts.include?("Error") %>
+          <th class="fa-red scr-w-med-min">
+            <%= fa_icon "building lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Rooftop Scraper: #{indexer.rt_sts}" %>
+          </th>
+          <% elsif indexer.rt_sts && indexer.rt_sts.include?("None") %>
+          <th class="fa-black scr-w-med-min">
+            <%= fa_icon "building lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Rooftop Scraper: #{indexer.rt_sts}" %>
+          </th>
+          <% elsif indexer.rt_sts %>
+          <th class="fa-blue scr-w-med-min">
+            <%= fa_icon "building lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Rooftop Scraper: #{indexer.rt_sts}" %>
+          </th>
+          <% else %>
+          <th class="fa-md-gray scr-w-med-min">
+            <%= fa_icon "building lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "No Rooftop Scraper Status" %>
+          </th>
+          <% end %>
+
+
+          <!-- Staffer Status / Staff Count -->
+          <!-- <th><%#= link_core_staffers_with_url(indexer) %></th> -->
+
+          <!-- Trial for Web Contacts Link and Count -->
+          <% if indexer.web_staff_count > 0 %>
+          <th class="fa-blue scr-w-med-min">
+            <%= link_to staffer_acct_contacts_path(indexer: indexer), :target => "_blank" do %>
+            <%= fa_icon "user-plus lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Scraped Contacts: #{indexer.web_staff_count}" %>
+            <% end %> <%= indexer.web_staff_count %>
+          </th>
+          <% elsif indexer.contact_status && indexer.contact_status.include?("Error") %>
+          <th class="fa-red scr-w-med-min">
+            <%= fa_icon "user-plus lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Contact Scraper: #{indexer.contact_status}" %>
+          </th>
+          <% elsif indexer.contact_status && indexer.contact_status.include?("None") %>
+          <th class="fa-black scr-w-med-min">
+            <%= fa_icon "user-plus lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Contact Scraper: #{indexer.contact_status}" %>
+          </th>
+          <% elsif indexer.contact_status %>
+          <th class="fa-blue scr-w-med-min">
+            <%= fa_icon "user-plus lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "Contact Scraper: #{indexer.contact_status}" %>
+          </th>
+          <% else %>
+          <th class="fa-md-gray scr-w-med-min">
+            <%= fa_icon "user-plus lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "No Dealer Staff Status" %>
+          </th>
+          <% end %>
+
+
+          <!-- Trial Geo Status -->
+          <% if indexer.geo_status && indexer.geo_status.include?("Error") %>
+          <th class="fa-red scr-w-med-min">
+            <%= fa_icon "map lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "GeoLocation: #{indexer.rt_sts}" %>
+          </th>
+          <% elsif indexer.geo_status && indexer.geo_status.include?("None") %>
+          <th class="fa-black scr-w-med-min">
+            <%= fa_icon "map lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "GeoLocation: #{indexer.geo_status}" %>
+          </th>
+          <% elsif indexer.geo_status %>
+          <th class="fa-blue scr-w-med-min">
+            <%= fa_icon "map lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "GeoLocation: #{indexer.geo_status}" %>
+          </th>
+          <% else %>
+          <th class="fa-md-gray scr-w-med-min">
+            <%= fa_icon "map lg shadow", "data-toggle": "tooltip", "data-placement": "top", title: "No GeoLocation Status" %>
+          </th>
+          <% end %>
+
+        </tr>
+
+      </table>
+
+      <table class="table table-bordered no-wrap">
+        <tr class="">
+          <th class="scr-w-xsm">
+            <span data-toggle="tooltip" data-placement="top" title="RT Scraper results via Clean URL ">Scraped</span>
+          </th>
+
+          <td><%= link_to indexer.clean_url, :target => "_blank", class: 'tooltips', title: "Raw URL: #{indexer.raw_url}\nClean URL: #{indexer.clean_url}", data: { toggle: 'tooltip', placement: 'top'} do %>
+            <%= indexer.clean_url %>
+            <% end %>
+          </td>
+
+          <td><span data-toggle="tooltip" data-placement="top" title="Scraped Rooftop Name"><%= indexer.acct_name %></span></td>
+
+          <td><span data-toggle="tooltip" data-placement="top" title="Scraped Address"><%= indexer.full_addr %></span></td>
+
+          <!-- <td class="scraper-w-sm"><span data-toggle="tooltip" data-placement="top" title="Scraped Address Pin"><%#= indexer.acct_pin %></span></td> -->
+
+          <td class="scraper-w-sm"><span data-toggle="tooltip" data-placement="top" title="Scraped Phone"><%= indexer.phone %></span></td>
+
+        </tr>
+      </table>
+
+      <table class="table table-bordered no-wrap">
+        <tr>
+          <th class="scr-w-xsm">
+            <span data-toggle="tooltip" data-placement="top" title="Match Score: ex. 100% = SFDC IDs with 4/4 Matching Criteria">Score</span>
+          </th>
+          <th class="scr-tiny">100%</th>
+          <td class="scr-w-md"><%= link_core_staffers(indexer.score100) %></td>
+
+          <th class="scr-tiny">75%</th>
+          <td class="scr-w-md"><%= link_core_staffers(indexer.score75) %></td>
+
+          <th class="scr-tiny">50%</th>
+          <td class="scr-w-md"><%= link_core_staffers(indexer.score50) %></td>
+
+          <th class="scr-tiny">25%</th>
+          <td class="scr-w-md"><%= link_core_staffers(indexer.score25) %></td>
+        </tr>
+      </table>
+
+      <table class="table table-bordered no-wrap">
+        <tr>
+          <th class="scr-w-xsm">
+            <span data-toggle="tooltip" data-placement="top" title="Final Approval Status via Account Section: Merge, Flag, Drop">Final</span>
+          </th>
+
+          <th class="scr-w-xsm">Merged</th>
+          <td class="scr-w-md"><%= link_core_staffers(indexer.merged_ids) %></td>
+
+          <th class="scr-w-xsm">Flagged</th>
+          <td class="scr-w-md"><%= link_core_staffers(indexer.flagged_ids) %></td>
+
+          <th class="scr-w-xsm">Dropped</th>
+          <td class="scr-w-md"><%= link_core_staffers(indexer.dropped_ids) %></td>
+        </tr>
+      </table>
+
+    </div> <!-- /.profile-col col-md-12 -->
+  </div> <!-- /.row profile-row -->
+</div> <!-- /#core-detail -->
+<br>

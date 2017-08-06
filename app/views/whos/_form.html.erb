@@ -1,0 +1,232 @@
+<%= form_for(who) do |f| %>
+<% if who.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(who.errors.count, "error") %> prohibited this who from being saved:</h2>
+
+  <ul>
+    <% who.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= f.label :domain %>
+  <%= f.text_field :domain %>
+</div>
+
+<div class="field">
+  <%= f.label :domain_id %>
+  <%= f.text_field :domain_id %>
+</div>
+
+<div class="field">
+  <%= f.label :ip %>
+  <%= f.text_field :ip %>
+</div>
+
+<div class="field">
+  <%= f.label :server1 %>
+  <%= f.text_field :server1 %>
+</div>
+
+<div class="field">
+  <%= f.label :server2 %>
+  <%= f.text_field :server2 %>
+</div>
+
+<div class="field">
+  <%= f.label :registrar_url %>
+  <%= f.text_field :registrar_url %>
+</div>
+
+<div class="field">
+  <%= f.label :registrar_id %>
+  <%= f.text_field :registrar_id %>
+</div>
+
+<div class="field">
+  <%= f.label :registrant_id %>
+  <%= f.text_field :registrant_id %>
+</div>
+
+<div class="field">
+  <%= f.label :registrant_type %>
+  <%= f.text_field :registrant_type %>
+</div>
+
+<div class="field">
+  <%= f.label :registrant_name %>
+  <%= f.text_field :registrant_name %>
+</div>
+
+<div class="field">
+  <%= f.label :registrant_organization %>
+  <%= f.text_field :registrant_organization %>
+</div>
+
+<div class="field">
+  <%= f.label :registrant_address %>
+  <%= f.text_field :registrant_address %>
+</div>
+
+<div class="field">
+  <%= f.label :registrant_city %>
+  <%= f.text_field :registrant_city %>
+</div>
+
+<div class="field">
+  <%= f.label :registrant_zip %>
+  <%= f.text_field :registrant_zip %>
+</div>
+
+<div class="field">
+  <%= f.label :registrant_state %>
+  <%= f.text_field :registrant_state %>
+</div>
+
+<div class="field">
+  <%= f.label :registrant_phone %>
+  <%= f.text_field :registrant_phone %>
+</div>
+
+<div class="field">
+  <%= f.label :registrant_fax %>
+  <%= f.text_field :registrant_fax %>
+</div>
+
+<div class="field">
+  <%= f.label :registrant_email %>
+  <%= f.text_field :registrant_email %>
+</div>
+
+<div class="field">
+  <%= f.label :registrant_url %>
+  <%= f.text_field :registrant_url %>
+</div>
+
+<div class="field">
+  <%= f.label :admin_id %>
+  <%= f.text_field :admin_id %>
+</div>
+
+<div class="field">
+  <%= f.label :admin_type %>
+  <%= f.text_field :admin_type %>
+</div>
+
+<div class="field">
+  <%= f.label :admin_name %>
+  <%= f.text_field :admin_name %>
+</div>
+
+<div class="field">
+  <%= f.label :admin_organization %>
+  <%= f.text_field :admin_organization %>
+</div>
+
+<div class="field">
+  <%= f.label :admin_address %>
+  <%= f.text_field :admin_address %>
+</div>
+
+<div class="field">
+  <%= f.label :admin_city %>
+  <%= f.text_field :admin_city %>
+</div>
+
+<div class="field">
+  <%= f.label :admin_zip %>
+  <%= f.text_field :admin_zip %>
+</div>
+
+<div class="field">
+  <%= f.label :admin_state %>
+  <%= f.text_field :admin_state %>
+</div>
+
+<div class="field">
+  <%= f.label :admin_phone %>
+  <%= f.text_field :admin_phone %>
+</div>
+
+<div class="field">
+  <%= f.label :admin_fax %>
+  <%= f.text_field :admin_fax %>
+</div>
+
+<div class="field">
+  <%= f.label :admin_email %>
+  <%= f.text_field :admin_email %>
+</div>
+
+<div class="field">
+  <%= f.label :admin_url %>
+  <%= f.text_field :admin_url %>
+</div>
+
+<div class="field">
+  <%= f.label :tech_id %>
+  <%= f.text_field :tech_id %>
+</div>
+
+<div class="field">
+  <%= f.label :tech_type %>
+  <%= f.text_field :tech_type %>
+</div>
+
+<div class="field">
+  <%= f.label :tech_name %>
+  <%= f.text_field :tech_name %>
+</div>
+
+<div class="field">
+  <%= f.label :tech_organization %>
+  <%= f.text_field :tech_organization %>
+</div>
+
+<div class="field">
+  <%= f.label :tech_address %>
+  <%= f.text_field :tech_address %>
+</div>
+
+<div class="field">
+  <%= f.label :tech_city %>
+  <%= f.text_field :tech_city %>
+</div>
+
+<div class="field">
+  <%= f.label :tech_zip %>
+  <%= f.text_field :tech_zip %>
+</div>
+
+<div class="field">
+  <%= f.label :tech_state %>
+  <%= f.text_field :tech_state %>
+</div>
+
+<div class="field">
+  <%= f.label :tech_phone %>
+  <%= f.text_field :tech_phone %>
+</div>
+
+<div class="field">
+  <%= f.label :tech_fax %>
+  <%= f.text_field :tech_fax %>
+</div>
+
+<div class="field">
+  <%= f.label :tech_email %>
+  <%= f.text_field :tech_email %>
+</div>
+
+<div class="field">
+  <%= f.label :tech_url %>
+  <%= f.text_field :tech_url %>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>

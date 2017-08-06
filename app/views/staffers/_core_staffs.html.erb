@@ -1,0 +1,125 @@
+
+<div class="scr-prof">
+  <table class="table table-bordered no-wrap">
+
+    <thead>
+      <tr>
+        <th>#</th>
+        <!-- <th>Stage</th> -->
+        <!-- <th>Status</th> -->
+        <th>Source</th>
+        <th>ID</th>
+        <th>ID</th>
+        <th>URL</th>
+        <th>URL</th>
+        <!-- <th>Account Name</th> -->
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Full Name</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <!-- <th colspan="2"></th> -->
+      </tr>
+    </thead>
+
+    <tbody>
+      <% num = 0 %>
+      <% staffers.each do |staffer| %>
+      <% num +=1 %>
+      <tr>
+        <td class="staffer-w-xsm"><%= num %></td>
+        <!-- <td><%#= staffer.staffer_status %></td> -->
+        <!-- <td><%#= staffer.cont_status %></td> -->
+        <td class="staffer-w-sm"><%= staffer.cont_source %></td>
+
+        <!-- Account ID -->
+        <% unless staffer.sfdc_id == nil %>
+        <td class="staffer-w-xsm fa-blue">
+          <%= fa_icon "address-card lg", "data-toggle": "tooltip", "data-placement": "top", title: "#{staffer.sfdc_id}" %>
+        </td>
+        <% else %>
+        <td class="staffer-w-xsm fa-gray"><%= fa_icon "address-card lg", "data-toggle": "tooltip", "data-placement": "top", title: "No Account ID" %></td>
+        <% end %>
+
+
+        <!-- Contact ID -->
+        <% unless staffer.sfdc_cont_id == nil %>
+        <td class="staffer-w-xsm fa-blue">
+          <%= fa_icon "user lg", "data-toggle": "tooltip", "data-placement": "top", title: "#{staffer.sfdc_cont_id}" %>
+        </td>
+        <% else %>
+        <td class="staffer-w-xsm fa-gray"><%= fa_icon "user lg", "data-toggle": "tooltip", "data-placement": "top", title: "No Contact ID" %></td>
+        <% end %>
+
+
+        <!-- Dealer Website Module -->
+        <% if staffer.domain != nil %>
+        <td class="staffer-w-xsm fa-blue">
+          <span class="modalButton" data-toggle="modal" data-target="#myModal" data-src="<%= add_http(staffer.domain) %>">
+            <%= fa_icon "clone lg", "data-toggle": "tooltip", "data-placement": "top", title: "LightBox: Dealer Site" %></span></span>
+          </td>
+          <% else %>
+          <td class="staffer-w-xsm fa-red"><%= fa_icon "clone lg", "data-toggle": "tooltip", "data-placement": "top", title: "No URL" %></td>
+          <% end %>
+
+
+          <!-- Dealer Website External Link -->
+          <% unless staffer.domain == nil %>
+          <td class="staffer-w-xsm fa-blue">
+            <%= link_to add_http(staffer.domain), :target => "_blank" do %>
+            <%= fa_icon "external-link lg", "data-toggle": "tooltip", "data-placement": "top", title: "#{staffer.domain}" %>
+            <% end %>
+          </td>
+          <% else %>
+          <td class="staffer-w-xsm fa-red"><%= fa_icon "external-link lg", "data-toggle": "tooltip", "data-placement": "top", title: "No URL" %></td>
+          <% end %>
+
+          <!-- <td><%#= staffer.acct_name %></td> -->
+
+          <td><%= staffer.fname %></td>
+          <td><%= staffer.lname %></td>
+          <td><%= staffer.fullname %></td>
+          <td><%= staffer.job %></td>
+          <td><%= staffer.job_raw %></td>
+
+          <td class="staffer-w-md"><%= staffer.email %></td>
+
+          <!-- phone -->
+          <% unless staffer.phone == nil %>
+          <td class="staffer-w-xsm fa-blue">
+            <%= fa_icon "phone lg", "data-toggle": "tooltip", "data-placement": "top", title: "#{staffer.phone}" %>
+          </td>
+          <% else %>
+          <td class="staffer-w-xsm fa-gray">
+            <%= fa_icon "phone lg", "data-toggle": "tooltip", "data-placement": "top", title: "No Phone" %>
+          </td>
+          <% end %>
+
+          <!-- <% if advanced_and_up %>
+          <td><%#= link_to 'Edit', edit_staffer_path(staffer) %></td>
+          <% end %>
+          <% if admin_only %>
+          <td><%#= link_to 'Destroy', staffer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %> -->
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="close-button">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" frameborder="0"></iframe>
+          </div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->

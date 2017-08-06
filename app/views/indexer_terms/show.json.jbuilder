@@ -1,0 +1,1 @@
+json.partial! "indexer_terms/indexer_term", indexer_term: @indexer_term

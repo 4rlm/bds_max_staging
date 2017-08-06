@@ -1,0 +1,105 @@
+<div class="row">
+  <div class="col-md-8 col-sm-offset-2">
+    <%= form_for(core) do |f| %>
+    <% if core.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(core.errors.count, "error") %> prohibited this core from being saved:</h2>
+
+      <ul>
+        <% core.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :bds_status %>
+          <%= f.text_field :bds_status, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :sfdc_id %>
+          <%= f.text_field :sfdc_id, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :sfdc_tier %>
+          <%= f.number_field :sfdc_tier, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :sfdc_sales_person %>
+          <%= f.text_field :sfdc_sales_person, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :sfdc_type %>
+          <%= f.text_field :sfdc_type, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :sfdc_ult_grp %>
+          <%= f.text_field :sfdc_ult_grp, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :sfdc_ult_rt %>
+          <%= f.number_field :sfdc_ult_rt, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :sfdc_group %>
+          <%= f.text_field :sfdc_group, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :sfdc_grp_rt %>
+          <%= f.number_field :sfdc_grp_rt, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :sfdc_acct %>
+          <%= f.text_field :sfdc_acct, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :sfdc_street %>
+          <%= f.text_field :sfdc_street, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :sfdc_city %>
+          <%= f.text_field :sfdc_city, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :sfdc_state %>
+          <%= f.text_field :sfdc_state, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :sfdc_zip %>
+          <%= f.number_field :sfdc_zip, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :sfdc_ph %>
+          <%= f.text_field :sfdc_ph, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :sfdc_url %>
+          <%= f.text_field :sfdc_url, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <%= f.submit class: 'btn btn-success pull-right' %>
+    </div>
+    <% end %>
+  </div>
+</div>

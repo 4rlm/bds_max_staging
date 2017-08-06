@@ -1,0 +1,22 @@
+<%= form_for(in_host_po) do |f| %>
+<% if in_host_po.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(in_host_po.errors.count, "error") %> prohibited this in_host_po from being saved:</h2>
+
+  <ul>
+    <% in_host_po.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= f.label :term %>
+  <%= f.text_field :term %>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>
