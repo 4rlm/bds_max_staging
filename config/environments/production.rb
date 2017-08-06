@@ -83,5 +83,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { host: 'bds-max.herokuapp.com' }
+  
+  ### Need to Uncomment Below, and change the heroku app name!!!
+  # config.action_mailer.default_url_options = { host: 'bds-max.herokuapp.com' }
 end

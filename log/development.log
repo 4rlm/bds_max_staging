@@ -1,0 +1,1827 @@
+Started GET "/" for ::1 at 2017-08-06 10:45:15 -0500
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/Adam/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Adam/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Adam/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (1.5ms)
+  Rendering /Users/Adam/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Adam/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /Users/Adam/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Adam/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/Adam/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.7ms)
+  [1m[35m (21.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7096990013148056175);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGcses (20161112154024)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "gcses" ("id" serial primary key, "gcse_timestamp" timestamp, "gcse_query_num" integer, "gcse_result_num" integer, "sfdc_id" character varying, "sfdc_ult_acct" character varying, "sfdc_acct" character varying, "sfdc_type" character varying, "sfdc_street" character varying, "sfdc_city" character varying, "sfdc_state" character varying, "sfdc_url_o" character varying, "domain_status" character varying, "domain" character varying, "root" character varying, "suffix" character varying, "in_host_pos" character varying, "in_host_neg" character varying, "in_host_del" character varying, "in_suffix_del" character varying, "exclude_root" character varying, "text" character varying, "in_text_pos" character varying, "in_text_neg" character varying, "in_text_del" character varying, "url_encoded" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161112154024"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCores (20161127024835)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "cores" ("id" serial primary key, "bds_status" character varying, "sfdc_id" character varying, "sfdc_tier" integer, "sfdc_sales_person" character varying, "sfdc_type" character varying, "sfdc_ult_grp" character varying, "sfdc_ult_rt" integer, "sfdc_group" character varying, "sfdc_grp_rt" integer, "sfdc_acct" character varying, "sfdc_street" character varying, "sfdc_city" character varying, "sfdc_state" character varying, "sfdc_zip" integer, "sfdc_ph" character varying, "sfdc_url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161127024835"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDelayedJobs (20161128052948)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class CreateDelayedJobs < ActiveRecord::Migration[4.2] (called from migrate at /Users/Adam/.rvm/gems/ruby-2.3.1@global/gems/activerecord-5.0.0.1/lib/active_record/migration/compatibility.rb:116)
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "delayed_jobs" ("id" serial primary key, "priority" integer DEFAULT 0 NOT NULL, "attempts" integer DEFAULT 0 NOT NULL, "handler" text NOT NULL, "last_error" text, "run_at" timestamp, "locked_at" timestamp, "failed_at" timestamp, "locked_by" character varying, "queue" character varying, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "delayed_jobs_priority" ON "delayed_jobs"  ("priority", "run_at")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161128052948"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeTypeForSfdcTierToString (20161129015009)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.1ms)[0m  [1m[35mALTER TABLE "cores" ALTER COLUMN "sfdc_tier" TYPE character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161129015009"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNewColumnsToCores (20161129015957)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "core_date" timestamp[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "domainer_date" timestamp[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "indexer_date" timestamp[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "staffer_date" timestamp[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "whois_date" timestamp[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161129015957"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRootCounterToGcses (20161129040018)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "gcses" ADD "root_counter" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161129040018"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddSfdcRootToGcses (20161129215801)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "gcses" ADD "sfdc_root" character varying[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161129215801"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddMatchedUrlToCores (20161130145403)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "matched_url" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161130145403"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddMatchedRootToCores (20161130153955)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "matched_root" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161130153955"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSolitaries (20161201134728)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "solitaries" ("id" serial primary key, "solitary_root" character varying, "solitary_url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161201134728"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUrlComparisonToCores (20161201160051)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "cores" ADD "url_comparison" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161201160051"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRootComparisonToCores (20161201160106)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "root_comparison" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161201160106"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddSfdcRootToCores (20161201172315)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_root" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161201172315"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DropCriteriaTables (20161203040349)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161203040349"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateExcludeRoots (20161203040749)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "exclude_roots" ("id" serial primary key, "term" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161203040749"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateInHostPos (20161203041038)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "in_host_pos" ("id" serial primary key, "term" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161203041038"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateInTextDels (20161203041106)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "in_text_dels" ("id" serial primary key, "term" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161203041106"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateInTextPos (20161203041119)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "in_text_pos" ("id" serial primary key, "term" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161203041119"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCriteriaIndexerStaffTexts (20161206235947)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "criteria_indexer_staff_texts" ("id" serial primary key, "term" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161206235947"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCriteriaIndexerStaffHrefs (20161207000007)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "criteria_indexer_staff_hrefs" ("id" serial primary key, "term" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207000007"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCriteriaIndexerLocHrefs (20161207000020)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "criteria_indexer_loc_hrefs" ("id" serial primary key, "term" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207000020"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCriteriaIndexerLocTexts (20161207000031)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "criteria_indexer_loc_texts" ("id" serial primary key, "term" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207000031"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DropCriteriaIndexerStafTextsTable (20161207024825)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207024825"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIndexerStaffs (20161207154203)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "indexer_staffs" ("id" serial primary key, "indexer_status" character varying, "sfdc_acct" character varying, "sfdc_group_name" character varying, "sfdc_ult_acct" character varying, "root" character varying, "domain" character varying, "ip" character varying, "text" character varying, "href" character varying, "staff_link" character varying, "msg" character varying, "sfdc_street" character varying, "sfdc_city" character varying, "sfdc_state" character varying, "sfdc_type" character varying, "sfdc_tier" character varying, "sfdc_sales_person" character varying, "sfdc_id" character varying, "indexer_timestamp" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207154203"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIndexerLocations (20161207154227)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "indexer_locations" ("id" serial primary key, "indexer_status" character varying, "sfdc_acct" character varying, "sfdc_group_name" character varying, "sfdc_ult_acct" character varying, "root" character varying, "domain" character varying, "ip" character varying, "text" character varying, "href" character varying, "loc_link" character varying, "msg" character varying, "sfdc_street" character varying, "sfdc_city" character varying, "sfdc_state" character varying, "sfdc_type" character varying, "sfdc_tier" character varying, "sfdc_sales_person" character varying, "sfdc_id" character varying, "indexer_timestamp" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207154227"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePendingVerifications (20161209180009)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "pending_verifications" ("id" serial primary key, "root" character varying, "domain" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161209180009"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromGcses (20161211011736)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "gcses" DROP "url_encoded"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "gcses" DROP "in_text_neg"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "gcses" DROP "in_host_neg"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "gcses" DROP "in_suffix_del"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "gcses" DROP "in_host_del"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161211011736"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to Drop4CriteriaTables (20161211012557)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161211012557"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateInHostDels (20161211020931)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "in_host_dels" ("id" serial primary key, "term" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161211020931"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddStaffIndexerStatusToCore (20161215230250)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "staff_indexer_status" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161215230250"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddLocationIndexerStatusToCore (20161215230308)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "location_indexer_status" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161215230308"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddInventoryIndexerStatusToCore (20161215230318)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "inventory_indexer_status" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161215230318"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromIndexerTables (20161218042505)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_locations" DROP "sfdc_street"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_locations" DROP "sfdc_city"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "indexer_locations" DROP "sfdc_state"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_locations" DROP "sfdc_type"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_locations" DROP "sfdc_tier"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_locations" DROP "sfdc_sales_person"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_locations" DROP "root"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_locations" DROP "msg"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_staffs" DROP "sfdc_street"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "indexer_staffs" DROP "sfdc_city"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "indexer_staffs" DROP "sfdc_state"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_staffs" DROP "sfdc_type"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "indexer_staffs" DROP "sfdc_tier"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "indexer_staffs" DROP "sfdc_sales_person"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_staffs" DROP "root"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "indexer_staffs" DROP "msg"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161218042505"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddCoreToIndexerStaffs (20161224173625)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_staffs" ADD "core_id" integer[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_indexer_staffs_on_core_id" ON "indexer_staffs"  ("core_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161224173625"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddCoreToIndexerLocations (20161224175333)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_locations" ADD "core_id" integer[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_indexer_locations_on_core_id" ON "indexer_locations"  ("core_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161224175333"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsBackToGcses (20161226035758)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161226035758"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveCoreFromGcses (20161226040338)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161226040338"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveCoreFromIndexer (20161228155007)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "indexer_staffs" DROP "core_id"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "indexer_locations" DROP "core_id"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161228155007"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores (20161228155819)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "cores" ADD "staff_link" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "staff_text" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "location_link" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "location_text" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161228155819"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateStaffers (20161230124427)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "staffers" ("id" serial primary key, "staffer_status" character varying, "cont_status" character varying, "cont_source" character varying, "sfdc_id" character varying, "sfdc_sales_person" character varying, "sfdc_type" character varying, "sfdc_acct" character varying, "site_acct" character varying, "sfdc_group" character varying, "sfdc_ult_grp" character varying, "site_street" character varying, "site_city" character varying, "site_state" character varying, "site_zip" integer, "site_ph" character varying, "sfdc_cont_fname" character varying, "sfdc_cont_lname" character varying, "sfdc_cont_job" character varying, "sfdc_cont_phone" character varying, "sfdc_cont_email" character varying, "sfdc_cont_inactive" character varying, "sfdc_cont_id" character varying, "sfdc_cont_influence" integer, "site_cont_fname" character varying, "site_cont_lname" character varying, "site_cont_fullname" character varying, "site_cont_job" character varying, "site_cont_job_raw" character varying, "site_cont_phone" character varying, "site_cont_email" character varying, "site_cont_influence" integer, "template" character varying, "staffer_date" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161230124427"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNewColsToCores (20161231035230)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "domain_status" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "staffer_status" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "acct_indicator" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_group_indicator" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_ult_grp_indicator" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "template" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_acct" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_street" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_city" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_state" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_zip" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_ph" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "street_indicator" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "city_indicator" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "state_indicator" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "zip_indicator" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "ph_indicator" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "verified_ult_rt_indicator" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "verified_grp_rt_indicator" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "grp_rt_indicator" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "ult_grp_rt_indicator" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_franch_indicator" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_franch_indicator" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "franch_indicator" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161231035230"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToStaffers (20170101140917)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" ADD "staff_link" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "staffers" ADD "staff_text" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170101140917"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeTypeInStaffers (20170101142634)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.7ms)[0m  [1m[35mALTER TABLE "staffers" ALTER COLUMN "sfdc_cont_influence" TYPE character varying[0m
+  [1m[35m (4.7ms)[0m  [1m[35mALTER TABLE "staffers" ALTER COLUMN "site_cont_influence" TYPE character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170101142634"]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnFromStaffers (20170101143818)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "staffers" DROP "sfdc_cont_inactive"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170101143818"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnToStaffers (20170101144249)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" ADD "sfdc_cont_active" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170101144249"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnToStaffers2 (20170101150005)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" ADD "sfdc_tier" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" ADD "domain" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170101150005"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnToCores (20170101150603)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "franchise" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170101150603"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores2 (20170104125059)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_franchise" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_franchise" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_ult_rt" character varying[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_grp_rt" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170104125059"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromCores (20170104125729)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "cores" DROP "verified_ult_rt_indicator"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "verified_grp_rt_indicator"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "sfdc_franch_indicator"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_franch_indicator"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" DROP "franchise"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170104125729"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores3 (20170104150826)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "grp_name_indicator" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "ult_grp_name_indicator" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "tier_indicator" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_tier" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_franch_cat" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_franch_cat" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170104150826"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromCores2 (20170104153242)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "sfdc_group_indicator"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" DROP "sfdc_ult_grp_indicator"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170104153242"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores4 (20170104160645)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_ult_grp" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_group" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170104160645"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsStaffers (20170105175719)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" ADD "acct_name" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "staffers" ADD "group_name" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "staffers" ADD "ult_group_name" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "staffers" ADD "street" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "staffers" ADD "city" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "staffers" ADD "state" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" ADD "zip" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "staffers" ADD "fname" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "staffers" ADD "lname" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "staffers" ADD "fullname" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" ADD "job" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" ADD "job_raw" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "staffers" ADD "phone" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" ADD "email" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "staffers" ADD "influence" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170105175719"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToStaffers2 (20170105221354)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "staffers" ADD "cell_phone" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "staffers" ADD "last_activity_date" timestamp[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" ADD "created_date" timestamp[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" ADD "updated_date" timestamp[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" ADD "franchise" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170105221354"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromStaffers (20170105224432)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "staffers" DROP "sfdc_acct"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "site_acct"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "staffers" DROP "sfdc_group"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "staffers" DROP "sfdc_ult_grp"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "site_street"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "staffers" DROP "site_city"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "site_state"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "site_zip"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "site_ph"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "site_cont_fname"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "sfdc_cont_lname"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "site_cont_lname"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "sfdc_cont_fname"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "site_cont_fullname"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "sfdc_cont_job"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "site_cont_job"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "site_cont_job_raw"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "sfdc_cont_phone"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "site_cont_phone"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "sfdc_cont_email"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "site_cont_email"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "sfdc_cont_influence"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "site_cont_influence"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170105224432"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDashboards (20170106123306)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "dashboards" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170106123306"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAcctSourceToCores (20170114034348)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "cores" ADD "acct_source" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170114034348"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores5 (20170115132415)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_geo_addy" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_lat" float[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_lon" float[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_geo_addy" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_lat" float[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_lon" float[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170115132415"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLocations (20170115133829)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "locations" ("id" serial primary key, "address" character varying, "latitude" float, "longitude" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170115133829"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations (20170116023914)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "city" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "state" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "state_code" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "postal_code" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "coordinates" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "location_status" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170116023914"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations2 (20170116030151)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "locations" ADD "acct_name" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "group_name" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "locations" ADD "ult_group_name" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "source" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170116030151"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromLocations (20170116192503)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" DROP "location_status"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170116192503"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations3 (20170116192826)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "sfdc_id" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "tier" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "sales_person" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "acct_type" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "location_status" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "rev_address" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "rev_street" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "rev_city" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "rev_state" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "rev_state_code" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "rev_postal_code" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "locations" ADD "url" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "locations" ADD "root" character varying[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "locations" ADD "franchise" character varying[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170116192826"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromLocations3 (20170116205559)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" DROP "address"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170116205559"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations4 (20170116210040)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "street" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170116210040"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromLocations4 (20170117020736)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170117020736"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations5 (20170117020856)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "address" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170117020856"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores6 (20170117022103)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_geo_status" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_geo_status" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_geo_date" timestamp[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_geo_date" timestamp[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_coordinates" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_coordinates" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170117022103"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores7 (20170121062816)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_franch_cons" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_franch_cons" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "temp_id" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "coord_indicator" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170121062816"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToInHostPos (20170121135453)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "in_host_pos" ADD "consolidated_term" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "in_host_pos" ADD "category" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170121135453"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToInTextPos (20170121135525)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "in_text_pos" ADD "consolidated_term" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "in_text_pos" ADD "category" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170121135525"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores8 (20170121213950)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "franch_cons_ind" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "franch_cat_ind" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170121213950"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores9 (20170121214326)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "template_ind" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170121214326"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores10 (20170121215949)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_template" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170121215949"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddSiteTemplateToCores (20170122005024)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "site_template" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170122005024"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveTemplateFromCores (20170122005858)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" DROP "template"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170122005858"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveTempIdFromCores (20170122140412)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" DROP "temp_id"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170122140412"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores11 (20170122140535)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "temporary_id" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "url_status" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "hierarchy" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170122140535"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromCores3 (20170125215327)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" DROP "matched_url"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "matched_root"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "url_comparison"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "root_comparison"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "acct_indicator"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_acct"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_street"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_city"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_state"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_zip"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_ph"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" DROP "street_indicator"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "city_indicator"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "state_indicator"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "zip_indicator"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" DROP "ph_indicator"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cores" DROP "grp_rt_indicator"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "ult_grp_rt_indicator"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "franch_indicator"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_franchise"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_ult_rt"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_grp_rt"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "grp_name_indicator"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "ult_grp_name_indicator"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "tier_indicator"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_tier"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_franch_cat"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_ult_grp"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_group"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_geo_addy"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_lat"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_lon"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_geo_status"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_geo_date"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_coordinates"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_franch_cons"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "coord_indicator"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "franch_cons_ind"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "franch_cat_ind"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "template_ind"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "site_template"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170125215327"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations6 (20170126161450)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "franch_cat" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170126161450"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations7 (20170126162754)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "hierarchy" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170126162754"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores12 (20170127002053)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cores" ADD "full_address" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "latitude" float[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "longitude" float[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "cores" ADD "core_geo_status" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "geo_date" timestamp[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "coordinates" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170127002053"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores13 (20170127002306)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cores" ADD "geo_status" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170127002306"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromCores4 (20170127002544)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "cores" DROP "sfdc_geo_addy"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" DROP "sfdc_lat"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "cores" DROP "sfdc_lon"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "sfdc_geo_status"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" DROP "sfdc_geo_date"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "sfdc_coordinates"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" DROP "core_geo_status"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170127002544"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToStaffers3 (20170127185652)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "staffers" ADD "coordinates" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "staffers" ADD "full_address" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "staffers" ADD "franch_cat" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170127185652"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGeoPlaces (20170128230116)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "geo_places" ("id" serial primary key, "sfdc_id" character varying, "account" character varying, "street" character varying, "city" character varying, "state" character varying, "zip" character varying, "latitude" character varying, "longitude" character varying, "phone" character varying, "website" character varying, "map_url" character varying, "img_url" character varying, "hierarchy" character varying, "place_id" character varying, "address_components" character varying, "reference" character varying, "aspects" character varying, "reviews" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170128230116"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations8 (20170129043832)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "temporary_id" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "geo_acct_name" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "geo_full_addr" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "phone" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "map_url" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "img_url" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "place_id" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "reference" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "aspects" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "address_components" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170129043832"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromLocations5 (20170129044244)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" DROP "rev_street"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "locations" DROP "rev_city"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "locations" DROP "rev_state"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "locations" DROP "rev_state_code"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "locations" DROP "rev_postal_code"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170129044244"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromLocations6 (20170130124213)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "locations" DROP "root"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" DROP "franchise"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" DROP "franch_cat"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" DROP "reference"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" DROP "aspects"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" DROP "address_components"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170130124213"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations9 (20170130124318)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "crm_source" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "geo_root" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "crm_root" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "crm_url" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "geo_franch_term" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "geo_franch_cons" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "geo_franch_cat" character varying[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "locations" ADD "crm_franch_term" character varying[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "locations" ADD "crm_franch_cons" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "crm_franch_cat" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170130124318"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores14 (20170130142104)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "cores" ADD "geo_full_address" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "geo_acct_name" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170130142104"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores15 (20170130181238)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "cores" ADD "crm_phone" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170130181238"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations10 (20170130181936)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "crm_phone" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170130181936"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations11 (20170130183453)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "crm_hierarchy" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170130183453"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations12 (20170130184853)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "locations" ADD "geo_type" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170130184853"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddCoordIdArrToLocations (20170131032710)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "coord_id_arr" character varying[] DEFAULT '{}'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170131032710"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores16 (20170203011219)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "cop_lat" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "cop_lon" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "cop_coordinates" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "cop_template" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "cop_franch" character varying[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cores" ADD "conf_cat" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "lock" character varying[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170203011219"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromIndexerLocations (20170204145530)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_locations" DROP "sfdc_group_name"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "indexer_locations" DROP "sfdc_ult_acct"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_locations" DROP "ip"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "indexer_locations" DROP "indexer_timestamp"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170204145530"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromIndexerStaffs (20170204150142)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_staffs" DROP "sfdc_group_name"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "indexer_staffs" DROP "sfdc_ult_acct"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_staffs" DROP "ip"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_staffs" DROP "indexer_timestamp"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170204150142"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20170204171457)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_confirmation_token" ON "users"  ("confirmation_token")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170204171457"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColsToUsers (20170204172036)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "first_name" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "last_name" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "work_phone" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "mobile_phone" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "role" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170204172036"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to FixHerokuDb (20170205051653)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170205051653"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDepartmentToUsers (20170205054734)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "department" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170205054734"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores17 (20170205170324)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_acct_url" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_ult_grp_id" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_group_id" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "geo_street" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "geo_city" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "geo_state" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "geo_zip" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "geo_ph" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "geo_url" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170205170324"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations13 (20170205192730)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "locations" ADD "sfdc_acct_url" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170205192730"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToStaffers4 (20170205192912)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "staffers" ADD "sfdc_acct_url" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170205192912"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores18 (20170206142250)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "cores" ADD "acct_merge_stat" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "acct_merge_stat_dt" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "cont_merge_stat" character varying[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cores" ADD "cont_merge_stat_dt" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170206142250"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToStaffers5 (20170206142501)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "staffers" ADD "cont_merge_stat" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" ADD "cont_merge_stat_dt" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170206142501"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations14 (20170206142631)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "acct_merge_stat" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "acct_merge_stat_dt" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170206142631"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromStaffers2 (20170206175418)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "staffers" DROP "sfdc_acct_url"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170206175418"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations15 (20170208140134)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "locations" ADD "street_num" character varying[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "locations" ADD "street_text" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170208140134"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores19 (20170208204708)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "img_url" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170208204708"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromCores5 (20170209230755)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" DROP "sfdc_ult_rt"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "sfdc_grp_rt"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "sfdc_zip"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170209230755"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores20 (20170209231031)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_ult_rt" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_grp_rt" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_zip" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170209231031"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations16 (20170209231228)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "crm_street" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "crm_city" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "locations" ADD "crm_state" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "crm_zip" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170209231228"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations17 (20170211035329)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "crm_url_redirect" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170211035329"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations18 (20170212053618)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "geo_url_redirect" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170212053618"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations19 (20170213000511)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "locations" ADD "sts_geo_crm" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "sts_url" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "locations" ADD "sts_root" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "sts_acct" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "sts_addr" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "sts_ph" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170213000511"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromLocations7 (20170213112621)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "locations" DROP "acct_merge_stat_dt"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" DROP "acct_merge_stat"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" DROP "crm_hierarchy"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" DROP "hierarchy"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170213112621"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations20 (20170213113104)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "locations" ADD "sts_duplicate" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170213113104"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations21 (20170215131031)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "url_arr" character varying[] DEFAULT '{}'[0m
+  [1m[35m (6.1ms)[0m  [1m[35mALTER TABLE "locations" ADD "duplicate_arr" character varying[] DEFAULT '{}'[0m
+  [1m[35m (6.6ms)[0m  [1m[35mALTER TABLE "locations" ADD "cop_franch_arr" character varying[] DEFAULT '{}'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170215131031"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations22 (20170215160317)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "locations" ADD "cop_franch" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170215160317"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIndexers (20170221002808)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "indexers" ("id" serial primary key, "raw_url" character varying, "redirect_status" character varying, "clean_url" character varying, "indexer_status" character varying, "staff_url" character varying, "staff_text" character varying, "location_url" character varying, "location_text" character varying, "template" character varying, "crm_id_arr" character varying[] DEFAULT '{}', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170221002808"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToIndexers1 (20170221131200)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "indexers" ADD "loc_status" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexers" ADD "stf_status" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170221131200"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToIndexers2 (20170222150703)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexers" ADD "contact_status" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170222150703"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToIndexers3 (20170223152539)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexers" ADD "contacts_count" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "indexers" ADD "contacts_link" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170223152539"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIndexerTerms (20170225145824)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "indexer_terms" ("id" serial primary key, "category" character varying, "sub_category" character varying, "criteria_term" character varying, "response_term" character varying, "criteria_count" character varying, "response_count" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170225145824"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToIndexers4 (20170226030819)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "indexers" ADD "acct_name" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "indexers" ADD "rt_sts" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "indexers" ADD "cont_sts" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "indexers" ADD "full_addr" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "indexers" ADD "street" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "indexers" ADD "city" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexers" ADD "state" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "indexers" ADD "zip" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "indexers" ADD "phone" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170226030819"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToIndexerTerms1 (20170226031251)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_terms" ADD "mth_name" character varying[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170226031251"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores21 (20170306144722)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_url_redirect" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170306144722"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPhonesToIndexer (20170307193449)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.1ms)[0m  [1m[35mALTER TABLE "indexers" ADD "phones" character varying[] DEFAULT '{}'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170307193449"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddStsColsToLocations (20170308174536)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "locations" ADD "url_sts" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "acct_sts" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "addr_sts" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "ph_sts" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170308174536"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToIndexers5 (20170310000910)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexers" ADD "acct_pin" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170310000910"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores22 (20170310001017)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "acct_pin" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170310001017"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToLocations23 (20170310001157)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "locations" ADD "sfdc_acct_pin" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locations" ADD "geo_acct_pin" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170310001157"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToStaffers6 (20170310001357)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" ADD "acct_pin" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" ADD "cont_pin" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170310001357"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRawAddrToIndexer (20170310063109)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexers" ADD "raw_addr" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexers" ADD "raw_street" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170310063109"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromCores6 (20170310153611)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "cores" DROP "acct_pin"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cores" DROP "sfdc_url_redirect"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "cores" DROP "lock"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "cores" DROP "hierarchy"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "cores" DROP "whois_date"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" DROP "sfdc_root"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" DROP "inventory_indexer_status"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" DROP "url_status"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170310153611"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores23 (20170310154117)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "sfdc_clean_url" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "crm_acct_pin" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "web_acct_pin" character varying[0m
+  [1m[35m (8.2ms)[0m  [1m[35mALTER TABLE "cores" ADD "crm_phones" character varying[] DEFAULT '{}'[0m
+  [1m[35m (9.7ms)[0m  [1m[35mALTER TABLE "cores" ADD "web_phones" character varying[] DEFAULT '{}'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170310154117"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromStaffers3 (20170310185214)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "staffers" DROP "staff_text"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "staffers" DROP "sfdc_cont_active"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "staffers" DROP "group_name"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "staffers" DROP "ult_group_name"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "influence"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "cell_phone"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "last_activity_date"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "franchise"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "coordinates"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "franch_cat"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "staffers" DROP "cont_merge_stat"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "cont_merge_stat_dt"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" DROP "created_date"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "staffers" DROP "updated_date"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "staffers" DROP "template"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "staffers" DROP "staff_link"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170310185214"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveRawAddrFromIndexers (20170310195554)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "indexers" DROP "raw_addr"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170310195554"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToInHostPos1 (20170311030704)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "in_host_pos" ADD "brand_count" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311030704"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToInHostPos2 (20170311031049)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "in_host_pos" ADD "cat_count" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311031049"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DropUnusedTables (20170311033841)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.7ms)[0m  [1m[35mDROP TABLE "criteria_indexer_staff_texts"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE "criteria_indexer_loc_hrefs"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "geo_places"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "indexer_locations"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "indexer_staffs"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311033841"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DropCriteriaTables2 (20170311053614)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE "criteria_indexer_staff_hrefs"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE "criteria_indexer_loc_texts"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311053614"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWhos (20170311144155)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "whos" ("id" serial primary key, "domain" character varying, "domain_id" character varying, "ip" character varying, "server1" character varying, "server2" character varying, "registrar_url" character varying, "registrar_id" character varying, "registrant_id" character varying, "registrant_type" character varying, "registrant_name" character varying, "registrant_organization" character varying, "registrant_address" character varying, "registrant_city" character varying, "registrant_zip" character varying, "registrant_state" character varying, "registrant_country" character varying, "registrant_country_code" character varying, "registrant_phone" character varying, "registrant_fax" character varying, "registrant_email" character varying, "registrant_url" character varying, "registrant_created_on" character varying, "registrant_updated_on" character varying, "admin_id" character varying, "admin_type" character varying, "admin_name" character varying, "admin_organization" character varying, "admin_address" character varying, "admin_city" character varying, "admin_zip" character varying, "admin_state" character varying, "admin_country" character varying, "admin_country_code" character varying, "admin_phone" character varying, "admin_fax" character varying, "admin_email" character varying, "admin_url" character varying, "admin_created_on" character varying, "admin_updated_on" character varying, "tech_id" character varying, "tech_type" character varying, "tech_name" character varying, "tech_organization" character varying, "tech_address" character varying, "tech_city" character varying, "tech_zip" character varying, "tech_state" character varying, "tech_country" character varying, "tech_country_code" character varying, "tech_phone" character varying, "tech_fax" character varying, "tech_email" character varying, "tech_url" character varying, "tech_created_on" character varying, "tech_updated_on" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311144155"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToWhos1 (20170311155238)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "whos" ADD "who_status" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" ADD "url_status" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311155238"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToIndexers6 (20170311212530)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexers" ADD "who_status" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311212530"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores24 (20170311212722)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cores" ADD "who_status" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311212722"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromWhos1 (20170311215534)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "whos" DROP "tech_created_on"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "tech_updated_on"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "whos" DROP "tech_country"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "tech_country_code"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "registrant_country"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "whos" DROP "registrant_country_code"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "registrant_created_on"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "registrant_updated_on"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "whos" DROP "admin_country"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "whos" DROP "admin_country_code"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "admin_created_on"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "admin_updated_on"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311215534"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToWhos2 (20170312003002)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" ADD "registrant_pin" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "whos" ADD "tech_pin" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "whos" ADD "admin_pin" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170312003002"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToDashboards1 (20170312074035)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "dashboards" ADD "db_internal" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "dashboards" ADD "db_public" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "dashboards" ADD "db_count" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "dashboards" ADD "column_internal" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "dashboards" ADD "column_public" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "dashboards" ADD "column_item_count" character varying[0m
+  [1m[35m (6.3ms)[0m  [1m[35mALTER TABLE "dashboards" ADD "column_uniq_items" character varying[] DEFAULT '{}'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "dashboards" ADD "column_uniq_item_count" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170312074035"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RenameColsInDashboards (20170312184416)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "dashboards" RENAME COLUMN "db_internal" TO "db_name"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "dashboards" RENAME COLUMN "db_public" TO "db_alias"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "dashboards" RENAME COLUMN "column_internal" TO "col_name"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "dashboards" RENAME COLUMN "column_public" TO "col_alias"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "dashboards" RENAME COLUMN "column_item_count" TO "col_total"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "dashboards" RENAME COLUMN "column_uniq_items" TO "item_list"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "dashboards" RENAME COLUMN "column_uniq_item_count" TO "item_list_total"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "dashboards" DROP "db_count"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170312184416"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAcctMergeStsToCores (20170312220930)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cores" ADD "acct_merge_sts" character varying[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170312220930"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores25 (20170312223833)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" ADD "acct_match_score" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "org_match_status" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "ph_match_status" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "pin_match_status" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "url_match_status" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170312223833"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromCores7 (20170312224331)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" DROP "domain_status"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "temporary_id"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" DROP "cop_lat"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "cop_lon"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "cop_coordinates"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "cop_template"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "geo_street"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "geo_city"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "geo_state"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "geo_zip"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "geo_ph"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" DROP "geo_url"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "acct_merge_stat"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "cores" DROP "acct_merge_stat_dt"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "cores" DROP "cont_merge_stat"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cores" DROP "cont_merge_stat_dt"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "cores" DROP "web_phones"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "web_acct_pin"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170312224331"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnsFromWhos2 (20170313000957)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "whos" DROP "admin_pin"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "tech_pin"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "registrant_pin"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "tech_url"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "tech_email"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "tech_fax"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "whos" DROP "tech_phone"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "whos" DROP "tech_state"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "tech_zip"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "tech_city"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "tech_address"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "tech_organization"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "whos" DROP "tech_name"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "whos" DROP "tech_type"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "whos" DROP "tech_id"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "whos" DROP "admin_url"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "whos" DROP "admin_email"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "whos" DROP "admin_fax"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "admin_phone"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "admin_state"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "whos" DROP "admin_zip"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "admin_city"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "admin_address"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "admin_organization"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "admin_name"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "admin_type"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "admin_id"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "whos" DROP "registrant_type"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "whos" DROP "registrant_id"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170313000957"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DropGcseAndMore (20170313004457)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE "gcses"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "pending_verifications"[0m
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE "solitaries"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE "in_host_dels"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "in_text_dels"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "exclude_roots"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170313004457"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveUnusedCols (20170313005653)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "cores" DROP "domainer_date"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170313005653"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnToWhos3 (20170313033238)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "whos" ADD "who_addr_pin" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170313033238"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddTemplateToStaffers (20170313035103)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" ADD "template" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170313035103"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToIndexers7 (20170314000855)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexers" ADD "geo_status" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170314000855"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveRenameAddColumnsToCores1 (20170314144749)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" RENAME COLUMN "staff_indexer_status" TO "staff_pf_status"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" RENAME COLUMN "location_indexer_status" TO "loc_pf_status"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" RENAME COLUMN "sfdc_template" TO "template"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" RENAME COLUMN "who_status" TO "who_sts"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" RENAME COLUMN "acct_match_score" TO "match_score"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" RENAME COLUMN "org_match_status" TO "acct_match_sts"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" RENAME COLUMN "ph_match_status" TO "ph_match_sts"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" RENAME COLUMN "pin_match_status" TO "pin_match_sts"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" RENAME COLUMN "url_match_status" TO "url_match_sts"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cores" DROP "geo_full_address"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cores" DROP "core_date"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cores" DROP "acct_source"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "crm_phone"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" DROP "geo_acct_name"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "alt_acct_pin" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "alt_acct" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "alt_street" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "alt_city" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "alt_state" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "alt_zip" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "alt_ph" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "alt_url" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "alt_source" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "alt_address" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "alt_template" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170314144749"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RenameColumnsInCores (20170314155254)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" RENAME COLUMN "staff_pf_status" TO "staff_pf_sts"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" RENAME COLUMN "loc_pf_status" TO "loc_pf_sts"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" RENAME COLUMN "staffer_status" TO "staffer_sts"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" RENAME COLUMN "geo_status" TO "geo_sts"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170314155254"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RenameWrongDataTypeCols (20170314164314)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "in_host_pos" RENAME COLUMN "brand_count" TO "brand_count_old"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "in_host_pos" RENAME COLUMN "cat_count" TO "cat_count_old"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "indexer_terms" RENAME COLUMN "criteria_count" TO "criteria_count_old"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "indexer_terms" RENAME COLUMN "response_count" TO "response_count_old"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexers" RENAME COLUMN "contacts_count" TO "contacts_count_old"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "dashboards" RENAME COLUMN "col_total" TO "col_total_old"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "dashboards" RENAME COLUMN "item_list_total" TO "item_list_total_old"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170314164314"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToCores26 (20170314173545)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cores" ADD "redirect_sts" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170314173545"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RecreateColsWithCorrectDataType (20170314173820)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "in_host_pos" ADD "brand_count" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "in_host_pos" ADD "cat_count" integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_terms" ADD "criteria_count" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "indexer_terms" ADD "response_count" integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexers" ADD "contacts_count" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "dashboards" ADD "col_total" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "dashboards" ADD "item_list_total" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170314173820"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to SetDefaultValueForIntegerCols (20170314202744)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "in_host_pos" ALTER COLUMN "brand_count" TYPE integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "in_host_pos" ALTER COLUMN "brand_count" SET DEFAULT 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "in_host_pos" ALTER COLUMN "cat_count" TYPE integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "in_host_pos" ALTER COLUMN "cat_count" SET DEFAULT 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_terms" ALTER COLUMN "criteria_count" TYPE integer[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "indexer_terms" ALTER COLUMN "criteria_count" SET DEFAULT 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_terms" ALTER COLUMN "response_count" TYPE integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexer_terms" ALTER COLUMN "response_count" SET DEFAULT 0[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "indexers" ALTER COLUMN "contacts_count" TYPE integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexers" ALTER COLUMN "contacts_count" SET DEFAULT 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "dashboards" ALTER COLUMN "col_total" TYPE integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "dashboards" ALTER COLUMN "col_total" SET DEFAULT 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "dashboards" ALTER COLUMN "item_list_total" TYPE integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "dashboards" ALTER COLUMN "item_list_total" SET DEFAULT 0[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170314202744"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveWrongDataTypeCols (20170314203929)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "in_host_pos" DROP "brand_count_old"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "in_host_pos" DROP "cat_count_old"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "indexer_terms" DROP "criteria_count_old"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "indexer_terms" DROP "response_count_old"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "indexers" DROP "contacts_count_old"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "dashboards" DROP "col_total_old"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "dashboards" DROP "item_list_total_old"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170314203929"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToIndexers8 (20170315024353)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexers" ADD "archived" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170315024353"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToIndexers9 (20170315155447)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.8ms)[0m  [1m[35mALTER TABLE "indexers" ADD "clean_url_crm_ids" character varying[] DEFAULT '{}'[0m
+  [1m[35m (4.9ms)[0m  [1m[35mALTER TABLE "indexers" ADD "acct_pin_crm_ids" character varying[] DEFAULT '{}'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170315155447"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddArchiveToIndexers (20170316021848)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.3ms)[0m  [1m[35mALTER TABLE "indexers" ADD "archive" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170316021848"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveArchivedFromIndexers (20170316022816)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexers" DROP "archived"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170316022816"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToIndexers10 (20170316030030)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mALTER TABLE "indexers" ADD "crm_acct_ids" character varying[] DEFAULT '{}'[0m
+  [1m[35m (4.2ms)[0m  [1m[35mALTER TABLE "indexers" ADD "crm_ph_ids" character varying[] DEFAULT '{}'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170316030030"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToIndexers11 (20170316040710)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mALTER TABLE "indexers" ADD "score100" character varying[] DEFAULT '{}'[0m
+  [1m[35m (5.2ms)[0m  [1m[35mALTER TABLE "indexers" ADD "score75" character varying[] DEFAULT '{}'[0m
+  [1m[35m (4.7ms)[0m  [1m[35mALTER TABLE "indexers" ADD "score50" character varying[] DEFAULT '{}'[0m
+  [1m[35m (9.8ms)[0m  [1m[35mALTER TABLE "indexers" ADD "score25" character varying[] DEFAULT '{}'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170316040710"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToIndexers12 (20170317075634)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.1ms)[0m  [1m[35mALTER TABLE "indexers" ADD "rejected_ids" character varying[] DEFAULT '{}'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170317075634"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToIndexers13 (20170318134720)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.8ms)[0m  [1m[35mALTER TABLE "indexers" ADD "flagged_ids" character varying[] DEFAULT '{}'[0m
+  [1m[35m (4.4ms)[0m  [1m[35mALTER TABLE "indexers" ADD "dropped_ids" character varying[] DEFAULT '{}'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexers" ADD "reported" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexers" ADD "report_note" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexers" ADD "cop_type" character varying[0m
+  [1m[35m (5.0ms)[0m  [1m[35mALTER TABLE "indexers" ADD "cop_franchises" character varying[] DEFAULT '{}'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170318134720"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RenameColumnsInIndexers2 (20170318140036)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexers" RENAME COLUMN "reported" TO "bug"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "indexers" RENAME COLUMN "report_note" TO "bug_note"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "indexers" ADD "flagged_note" character varying[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cores" ADD "flagged_note" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cores" ADD "bug_note" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170318140036"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddStaffCountToIndexers (20170318212813)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.5ms)[0m  [1m[35mALTER TABLE "indexers" ADD "staff_count" integer DEFAULT 0[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170318212813"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddJsonTypeColToDashboards (20170318230748)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.4ms)[0m  [1m[35mALTER TABLE "dashboards" ADD "obj_list" json DEFAULT '{}'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170318230748"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveRejectedIdsFromIndexers (20170319151251)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "indexers" DROP "rejected_ids"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170319151251"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddMergedIdsToIndexers (20170319152210)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.8ms)[0m  [1m[35mALTER TABLE "indexers" ADD "merged_ids" character varying[] DEFAULT '{}'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170319152210"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumsToCoresAndIndexers (20170319231059)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.7ms)[0m  [1m[35mALTER TABLE "cores" ADD "crm_staff_count" integer DEFAULT 0[0m
+  [1m[35m (20.8ms)[0m  [1m[35mALTER TABLE "cores" ADD "web_staff_count" integer DEFAULT 0[0m
+  [1m[35m (5.4ms)[0m  [1m[35mALTER TABLE "indexers" ADD "crm_staff_count" integer DEFAULT 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "indexers" RENAME COLUMN "staff_count" TO "web_staff_count"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170319231059"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveCrmStaffCountFromIndexers (20170322040809)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "indexers" DROP "crm_staff_count"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170322040809"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToIndexers14 (20170803013035)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "indexers" ADD "scrape_date" timestamp[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170803013035"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToStaffers7 (20170803013503)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "staffers" ADD "scrape_date" timestamp[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170803013503"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-08-06 15:45:40 UTC], ["updated_at", 2017-08-06 15:45:40 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7096990013148056175)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'cores'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'dashboards'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'delayed_jobs'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'in_host_pos'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'in_text_pos'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'indexer_terms'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'indexers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'locations'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'staffers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'whos'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+Started GET "/" for ::1 at 2017-08-06 10:45:58 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (24.5ms)
+Started GET "/" for ::1 at 2017-08-06 10:46:05 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_flash.html.erb (0.6ms)
+Completed 200 OK in 7976ms (Views: 7954.0ms | ActiveRecord: 8.7ms)
+
+
+  Rendered layouts/_flash.html.erb (0.6ms)
+Completed 200 OK in 1222ms (Views: 1218.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-08-06 10:46:09 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (30.0ms)
+  Rendered layouts/_flash.html.erb (0.7ms)
+Completed 200 OK in 125ms (Views: 107.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2017-08-06 11:22:37 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_flash.html.erb (0.6ms)
+Completed 200 OK in 542ms (Views: 527.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-08-06 11:22:45 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (26.3ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 119ms (Views: 98.4ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-08-06 11:22:46 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aIiuSd6018EcVaBnCRNfse2eaS3WeF/M81aYvSM4Y9tMrrIMU5QTpwx2evlGOZFszE0GhXkcGqbyTlS9+MS96A==", "user"=>{"email"=>"4rlm@protonmail.ch", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "4rlm@protonmail.ch"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", 2017-08-06 16:22:47 UTC], ["last_sign_in_at", 2017-07-31 22:01:55 UTC], ["sign_in_count", 19], ["updated_at", 2017-08-06 16:22:47 UTC], ["id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 185ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2017-08-06 11:22:47 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 93ms (Views: 90.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/core/search" for ::1 at 2017-08-06 11:22:50 -0500
+Processing by CoresController#search as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.5ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Core"], ["col_name", "alt_source"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.4ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Core"], ["col_name", "sfdc_type"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.2ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Core"], ["col_name", "sfdc_tier"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.3ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Core"], ["col_name", "sfdc_sales_person"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (1.1ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Core"], ["col_name", "sfdc_franch_cons"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.3ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Core"], ["col_name", "sfdc_franch_cat"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.3ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Core"], ["col_name", "template"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.2ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Core"], ["col_name", "bds_status"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.2ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Core"], ["col_name", "staffer_sts"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.2ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Core"], ["col_name", "acct_merge_sts"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.2ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Core"], ["col_name", "match_score"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.3ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Core"], ["col_name", "acct_match_sts"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.2ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Core"], ["col_name", "pin_match_sts"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.2ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Core"], ["col_name", "url_match_sts"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.2ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Core"], ["col_name", "ph_match_sts"], ["LIMIT", 1]]
+  [1m[35m (35.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "cores"[0m
+  Rendering cores/search.html.erb within layouts/application
+  Rendered cores/_modal.html.erb (0.5ms)
+  Rendered layouts/_text_field_tag.html.erb (0.3ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered cores/search.html.erb within layouts/application (28.1ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 216ms (Views: 130.4ms | ActiveRecord: 52.9ms)
+
+
+Started GET "/staffer/search" for ::1 at 2017-08-06 11:22:54 -0500
+Processing by StaffersController#search as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.7ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "staffer_status"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.3ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "cont_source"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.4ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "sfdc_type"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.2ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "sfdc_tier"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.3ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "sfdc_sales_person"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.2ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "cont_status"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (1.3ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "job"], ["LIMIT", 1]]
+  [1m[35m (222.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "staffers"[0m
+  Rendering staffers/search.html.erb within layouts/application
+  Rendered staffers/_modal.html.erb (0.3ms)
+  Rendered layouts/_text_field_tag.html.erb (0.4ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered staffers/search.html.erb within layouts/application (28.2ms)
+  Rendered layouts/_nav.html.erb (2.1ms)
+  Rendered layouts/_flash.html.erb (0.7ms)
+Completed 200 OK in 379ms (Views: 132.3ms | ActiveRecord: 231.1ms)
+
+
+Started GET "/" for ::1 at 2017-08-06 11:23:45 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (32.7ms)
+  Rendered layouts/_nav.html.erb (2.1ms)
+  Rendered layouts/_flash.html.erb (0.6ms)
+Completed 200 OK in 569ms (Views: 546.4ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/staffer/search" for ::1 at 2017-08-06 11:23:53 -0500
+Processing by StaffersController#search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.6ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "staffer_status"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.4ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "cont_source"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.3ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "sfdc_type"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.3ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "sfdc_tier"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.4ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "sfdc_sales_person"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.3ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "cont_status"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (1.6ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "job"], ["LIMIT", 1]]
+  [1m[35m (225.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "staffers"[0m
+  Rendering staffers/search.html.erb within layouts/application
+  Rendered staffers/_modal.html.erb (0.6ms)
+  Rendered layouts/_text_field_tag.html.erb (0.4ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.2ms)
+  Rendered staffers/search.html.erb within layouts/application (39.8ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 384ms (Views: 120.6ms | ActiveRecord: 236.9ms)
+
+
+Started POST "/search_result_page_staffer" for ::1 at 2017-08-06 11:25:26 -0500
+Processing by SearchController#search_result_staffer as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jiUwPEQ6rkAHg5RWD/Y23KkqIfCd3O1BWK66zYj4M1hHCwz3oDvvVBaDBEuQx0iXC5Cyoqupqi2QMf74gyGgRA==", "acct_name"=>"", "sfdc_id"=>"", "acct_pin"=>"", "street"=>"", "city"=>"", "zip"=>"", "full_address"=>"", "domain"=>"", "phone"=>"", "job_raw"=>"", "fname"=>"", "lname"=>"", "email"=>"", "sfdc_cont_id"=>"", "view_mode"=>"list", "commit"=>"Search Contacts"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Redirected to http://localhost:8080/staffers
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/staffers" for ::1 at 2017-08-06 11:25:26 -0500
+Processing by StaffersController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.3ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "staffer_status"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.2ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "cont_source"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.2ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "sfdc_type"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.2ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "sfdc_tier"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.2ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "sfdc_sales_person"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (0.2ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "cont_status"], ["LIMIT", 1]]
+  [1m[36mDashboard Load (1.1ms)[0m  [1m[34mSELECT  "dashboards".* FROM "dashboards" WHERE "dashboards"."db_name" = $1 AND "dashboards"."col_name" = $2 LIMIT $3[0m  [["db_name", "Staffer"], ["col_name", "job"], ["LIMIT", 1]]
+  [1m[35m (221.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "staffers"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "staffers"[0m
+  Rendering staffers/index.html.erb within layouts/application
+  Rendered staffers/_modal.html.erb (0.4ms)
+  Rendered layouts/_text_field_tag.html.erb (0.3ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered layouts/_text_field_tag.html.erb (0.1ms)
+  Rendered staffers/_filter.html.erb (26.7ms)
+  [1m[36mStaffer Load (319.5ms)[0m  [1m[34mSELECT  "staffers".* FROM "staffers" ORDER BY "staffers"."updated_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 40], ["OFFSET", 0]]
+  Rendered staffers/_list_view.html.erb (356.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "staffers"[0m
+  Rendered staffers/index.html.erb within layouts/application (392.5ms)
+  Rendered layouts/_nav.html.erb (1.6ms)
+  Rendered layouts/_flash.html.erb (0.7ms)
+Completed 200 OK in 733ms (Views: 174.6ms | ActiveRecord: 547.7ms)
+
+
+  [1m[35m (201.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "staffers"[0m
+  [1m[35m (292.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "staffers" WHERE ("staffers"."scrape_date" IS NOT NULL)[0m
+  [1m[35m (119.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "indexers" WHERE ("indexers"."scrape_date" IS NOT NULL)[0m
